@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		29240CD91BEE4A5200B0DD7E /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29240CD81BEE4A5200B0DD7E /* HealthKit.framework */; };
-		29240CDE1BEE4AB900B0DD7E /* HomeKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29240CDD1BEE4AB900B0DD7E /* HomeKit.framework */; };
+		29382D481BEE4D2B00913700 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29382D471BEE4D2B00913700 /* HealthKit.framework */; };
 		888E6F581BEE437400DBC93C /* File in Resources */ = {isa = PBXBuildFile; fileRef = 888E6F571BEE437400DBC93C /* File */; };
 		888E6F591BEE437400DBC93C /* File in Resources */ = {isa = PBXBuildFile; fileRef = 888E6F571BEE437400DBC93C /* File */; };
 		888E6F5A1BEE437400DBC93C /* File in Resources */ = {isa = PBXBuildFile; fileRef = 888E6F571BEE437400DBC93C /* File */; };
@@ -80,7 +80,7 @@
 		29240CD81BEE4A5200B0DD7E /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
 		29240CDB1BEE4A9900B0DD7E /* PanicAttack Watch.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "PanicAttack Watch.entitlements"; sourceTree = "<group>"; };
 		29240CDC1BEE4AB100B0DD7E /* PanicAttack Watch Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "PanicAttack Watch Extension.entitlements"; sourceTree = "<group>"; };
-		29240CDD1BEE4AB900B0DD7E /* HomeKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HomeKit.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS2.0.sdk/System/Library/Frameworks/HomeKit.framework; sourceTree = DEVELOPER_DIR; };
+		29382D471BEE4D2B00913700 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS2.0.sdk/System/Library/Frameworks/HealthKit.framework; sourceTree = DEVELOPER_DIR; };
 		888E6F571BEE437400DBC93C /* File */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = File; sourceTree = "<group>"; };
 		888E6F5B1BEE437C00DBC93C /* File */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = File; sourceTree = "<group>"; };
 		888E6F5F1BEE438500DBC93C /* File */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = File; sourceTree = "<group>"; };
@@ -120,7 +120,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				29240CDE1BEE4AB900B0DD7E /* HomeKit.framework in Frameworks */,
+				29382D481BEE4D2B00913700 /* HealthKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,7 +138,7 @@
 		29240CDF1BEE4B9F00B0DD7E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				29240CDD1BEE4AB900B0DD7E /* HomeKit.framework */,
+				29382D471BEE4D2B00913700 /* HealthKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -351,8 +351,11 @@
 							com.apple.ApplicationGroups.iOS = {
 								enabled = 1;
 							};
-							com.apple.HomeKit = {
+							com.apple.HealthKit = {
 								enabled = 1;
+							};
+							com.apple.HomeKit = {
+								enabled = 0;
 							};
 						};
 					};
