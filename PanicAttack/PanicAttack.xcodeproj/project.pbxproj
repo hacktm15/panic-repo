@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		29240CD91BEE4A5200B0DD7E /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29240CD81BEE4A5200B0DD7E /* HealthKit.framework */; };
-		29382D481BEE4D2B00913700 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29382D471BEE4D2B00913700 /* HealthKit.framework */; };
+		2955F0981BEE57AF00648BB4 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2955F0971BEE57AF00648BB4 /* HealthKit.framework */; };
+		2955F09A1BEE59D400648BB4 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2955F0991BEE59D400648BB4 /* HealthKit.framework */; };
 		888E6F581BEE437400DBC93C /* File in Resources */ = {isa = PBXBuildFile; fileRef = 888E6F571BEE437400DBC93C /* File */; };
 		888E6F591BEE437400DBC93C /* File in Resources */ = {isa = PBXBuildFile; fileRef = 888E6F571BEE437400DBC93C /* File */; };
 		888E6F5A1BEE437400DBC93C /* File in Resources */ = {isa = PBXBuildFile; fileRef = 888E6F571BEE437400DBC93C /* File */; };
@@ -77,10 +77,10 @@
 
 /* Begin PBXFileReference section */
 		29240CD71BEE4A4200B0DD7E /* PanicAttack.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = PanicAttack.entitlements; sourceTree = "<group>"; };
-		29240CD81BEE4A5200B0DD7E /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
 		29240CDB1BEE4A9900B0DD7E /* PanicAttack Watch.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "PanicAttack Watch.entitlements"; sourceTree = "<group>"; };
 		29240CDC1BEE4AB100B0DD7E /* PanicAttack Watch Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "PanicAttack Watch Extension.entitlements"; sourceTree = "<group>"; };
-		29382D471BEE4D2B00913700 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS2.0.sdk/System/Library/Frameworks/HealthKit.framework; sourceTree = DEVELOPER_DIR; };
+		2955F0971BEE57AF00648BB4 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS2.0.sdk/System/Library/Frameworks/HealthKit.framework; sourceTree = DEVELOPER_DIR; };
+		2955F0991BEE59D400648BB4 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
 		888E6F571BEE437400DBC93C /* File */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = File; sourceTree = "<group>"; };
 		888E6F5B1BEE437C00DBC93C /* File */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = File; sourceTree = "<group>"; };
 		888E6F5F1BEE438500DBC93C /* File */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = File; sourceTree = "<group>"; };
@@ -112,7 +112,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				29240CD91BEE4A5200B0DD7E /* HealthKit.framework in Frameworks */,
+				2955F09A1BEE59D400648BB4 /* HealthKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -120,7 +120,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				29382D481BEE4D2B00913700 /* HealthKit.framework in Frameworks */,
+				2955F0981BEE57AF00648BB4 /* HealthKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -130,7 +130,7 @@
 		29240CDA1BEE4A6500B0DD7E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				29240CD81BEE4A5200B0DD7E /* HealthKit.framework */,
+				2955F0991BEE59D400648BB4 /* HealthKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -138,7 +138,7 @@
 		29240CDF1BEE4B9F00B0DD7E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				29382D471BEE4D2B00913700 /* HealthKit.framework */,
+				2955F0971BEE57AF00648BB4 /* HealthKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -593,7 +593,7 @@
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "PanicAttack Watch Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.3PillarGlobal.PanicAttack.PanicAttack.watchkitapp.watchkitextension;
+				PRODUCT_BUNDLE_IDENTIFIER = com.3PillarGlobal.PanicAttack.watchkitapp.watchkitextension;
 				PRODUCT_NAME = "${TARGET_NAME}";
 				PROVISIONING_PROFILE = "";
 				SDKROOT = watchos;
@@ -611,7 +611,7 @@
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "PanicAttack Watch Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.3PillarGlobal.PanicAttack.PanicAttack.watchkitapp.watchkitextension;
+				PRODUCT_BUNDLE_IDENTIFIER = com.3PillarGlobal.PanicAttack.watchkitapp.watchkitextension;
 				PRODUCT_NAME = "${TARGET_NAME}";
 				PROVISIONING_PROFILE = "";
 				SDKROOT = watchos;
@@ -630,7 +630,7 @@
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Developer";
 				IBSC_MODULE = PanicAttack_Watch_Extension;
 				INFOPLIST_FILE = "PanicAttack Watch/Info.plist";
-				PRODUCT_BUNDLE_IDENTIFIER = com.3PillarGlobal.PanicAttack.PanicAttack.watchkitapp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.3PillarGlobal.PanicAttack.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SDKROOT = watchos;
@@ -649,7 +649,7 @@
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Developer";
 				IBSC_MODULE = PanicAttack_Watch_Extension;
 				INFOPLIST_FILE = "PanicAttack Watch/Info.plist";
-				PRODUCT_BUNDLE_IDENTIFIER = com.3PillarGlobal.PanicAttack.PanicAttack.watchkitapp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.3PillarGlobal.PanicAttack.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SDKROOT = watchos;
