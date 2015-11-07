@@ -13,7 +13,7 @@
 @interface HistoryViewController () <UITableViewDataSource, UITableViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *eventTable;
-@property (nonatomic) NSArray *events;
+@property (nonatomic) NSArray<Event *> *events;
 
 @end
 
@@ -27,6 +27,12 @@
     [super viewWillAppear: animated];
     
     [self.eventTable registerClass: [UITableViewCell class] forCellReuseIdentifier: @"EventCellIdentifier"];
+    
+    [[UserProfile sharedInstance].dataHandler fetchEventsWithCompletionBlock:^(NSArray<Event *> * _Nullable objects, NSError * _Nullable error) {
+        self.events = objects;
+        
+        [self.eventTable reloadData];
+    }];
 }
 
 #pragma mark - Table
@@ -41,6 +47,8 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier: @"EventCellIdentifier" forIndexPath: indexPath];
+    
+    cell.textLabel.text = self.events[indexPath.row].startDate.description;
     
     return cell;
 }
