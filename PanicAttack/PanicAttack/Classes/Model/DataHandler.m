@@ -17,66 +17,63 @@
 
 @implementation DataHandler
 
-- (instancetype)init {
-    if (self = [super init]) {
-        self.coreDataHandler = [CoreDataHandler new];
-    }
-    
-    return self;
-}
-
-- (void)save {
-    [self.coreDataHandler saveContext];
-}
-
 - (User *)createUserWithEmail:(NSString *)email {
-    User *user = [self.coreDataHandler insertEntityWithName:NSStringFromClass([User class])];
+    User *user = [User object];
     user.email = email;
+    [user saveInBackground];
     
     return user;
 }
 
-- (User *)fetchLoggedUser {
-    NSArray *users = [self.coreDataHandler fetchEntityWithName:NSStringFromClass([User class]) predicate:nil sortDescriptor:[[NSSortDescriptor alloc] initWithKey:@"firstName" ascending:YES]];
-    
-    return [users firstObject];
+- (void)fetchUserWithEmail:(NSString *)email completionBlock:(PFQueryArrayResultBlock)completion {
+    PFQuery *query = [PFQuery queryWithClassName:[User parseClassName]];
+    [query findObjectsInBackgroundWithBlock:completion];
 }
 
 - (Event *)createEventWithStartDate:(NSDate *)startDate {
-    Event *event = [self.coreDataHandler insertEntityWithName:NSStringFromClass([Event class])];
+    Event *event = [Event object];
     event.startDate = startDate;
+    [event saveInBackground];
     
     return event;
 }
 
-- (NSArray *)fetchEvents {
-    return [self.coreDataHandler fetchEntityWithName:NSStringFromClass([Event class]) predicate:nil sortDescriptor:[[NSSortDescriptor alloc] initWithKey:@"startDate" ascending:NO]];
+- (void)fetchEventsWithCompletionBlock:(PFQueryArrayResultBlock)completion {
+    PFQuery *query = [PFQuery queryWithClassName:[Event parseClassName]];
+    [query orderByDescending:@"startDate"];
+    [query includeKey:@"symptoms"];
+    [query includeKey:@"medications"];
+    [query findObjectsInBackgroundWithBlock:completion];
 }
 
 - (Medication *)createMedicationWithName:(NSString *)name {
-    Medication *medication = [self.coreDataHandler insertEntityWithName:NSStringFromClass([Medication class])];
+    Medication *medication = [Medication object];
     medication.name = name;
+    [medication saveInBackground];
     
     return medication;
 }
 
-- (NSArray *)fetchMedicationsWithName:(NSString *)name {
+- (void)fetchMedicationsWithName:(NSString *)name completionBlock:(PFQueryArrayResultBlock)completion {
     NSPredicate *predicate = [NSPredicate predicateWithFormat:@"name BEGINSWITH[cd] %@", name];
     
-    return [self.coreDataHandler fetchEntityWithName:NSStringFromClass([Medication class]) predicate:predicate sortDescriptor:[[NSSortDescriptor alloc] initWithKey:@"name" ascending:YES]];
+    PFQuery *query = [PFQuery queryWithClassName:[Medication parseClassName] predicate:predicate];
+    [query findObjectsInBackgroundWithBlock:completion];
 }
 
 - (Symptom *)createSymptomWithName:(NSString *)name {
-    Symptom *symptom = [self.coreDataHandler insertEntityWithName:NSStringFromClass([Symptom class])];
+    Symptom *symptom = [Symptom object];
     symptom.name = name;
+    [symptom saveInBackground];
     
     return symptom;
 }
 
-- (NSArray *)fetchSymptomsWithName:(NSString *)name {
+- (void)fetchSymptomsWithName:(NSString *)name completionBlock:(PFQueryArrayResultBlock)completion {
     NSPredicate *predicate = [NSPredicate predicateWithFormat:@"name BEGINSWITH[cd] %@", name];
     
-    return [self.coreDataHandler fetchEntityWithName:NSStringFromClass([Symptom class]) predicate:predicate sortDescriptor:[[NSSortDescriptor alloc] initWithKey:@"name" ascending:YES]];
+    PFQuery *query = [PFQuery queryWithClassName:[Symptom parseClassName] predicate:predicate];
+    [query findObjectsInBackgroundWithBlock:completion];
 }
 
 @end

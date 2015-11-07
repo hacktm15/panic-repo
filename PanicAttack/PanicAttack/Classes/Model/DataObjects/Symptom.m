@@ -11,6 +11,8 @@
 
 @implementation Symptom
 
-// Insert code here to add functionality to your managed object subclass
++ (NSString *)parseClassName {
+    return @"Symptom";
+}
 
 @end

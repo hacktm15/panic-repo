@@ -7,13 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <CoreData/CoreData.h>
+#import <Parse/Parse.h>
 
 @class Event;
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface User : NSManagedObject
+@interface User : PFObject <PFSubclassing>
 
 // Insert code here to declare functionality of your managed object subclass
 

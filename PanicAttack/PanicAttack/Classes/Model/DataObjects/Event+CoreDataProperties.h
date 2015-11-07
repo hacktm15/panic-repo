@@ -25,22 +25,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nullable, nonatomic, retain) NSString *observations;
 @property (nullable, nonatomic, retain) NSNumber *fearLevel;
 @property (nullable, nonatomic, retain) User *user;
-@property (nullable, nonatomic, retain) NSSet<Symptom *> *symptoms;
-@property (nullable, nonatomic, retain) NSSet<Medication *> *medications;
-
-@end
-
-@interface Event (CoreDataGeneratedAccessors)
-
-- (void)addSymptomsObject:(Symptom *)value;
-- (void)removeSymptomsObject:(Symptom *)value;
-- (void)addSymptoms:(NSSet<Symptom *> *)values;
-- (void)removeSymptoms:(NSSet<Symptom *> *)values;
-
-- (void)addMedicationsObject:(Medication *)value;
-- (void)removeMedicationsObject:(Medication *)value;
-- (void)addMedications:(NSSet<Medication *> *)values;
-- (void)removeMedications:(NSSet<Medication *> *)values;
+@property (nullable, nonatomic, retain) NSArray<Symptom *> *symptoms;
+@property (nullable, nonatomic, retain) NSArray<Medication *> *medications;
 
 @end
 
