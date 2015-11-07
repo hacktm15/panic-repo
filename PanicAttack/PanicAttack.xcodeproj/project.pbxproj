@@ -1,0 +1,587 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		888F878E1BEE3AE700D7B673 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 888F878D1BEE3AE700D7B673 /* main.m */; };
+		888F87911BEE3AE700D7B673 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 888F87901BEE3AE700D7B673 /* AppDelegate.m */; };
+		888F87941BEE3AE700D7B673 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 888F87931BEE3AE700D7B673 /* ViewController.m */; };
+		888F87971BEE3AE700D7B673 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 888F87951BEE3AE700D7B673 /* Main.storyboard */; };
+		888F879A1BEE3AE700D7B673 /* PanicAttack.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 888F87981BEE3AE700D7B673 /* PanicAttack.xcdatamodeld */; };
+		888F879C1BEE3AE700D7B673 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 888F879B1BEE3AE700D7B673 /* Assets.xcassets */; };
+		888F879F1BEE3AE700D7B673 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 888F879D1BEE3AE700D7B673 /* LaunchScreen.storyboard */; };
+		888F87AC1BEE3BEE00D7B673 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 888F87AA1BEE3BEE00D7B673 /* Interface.storyboard */; };
+		888F87AE1BEE3BEE00D7B673 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 888F87AD1BEE3BEE00D7B673 /* Assets.xcassets */; };
+		888F87B51BEE3BEE00D7B673 /* PanicAttack Watch Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 888F87B41BEE3BEE00D7B673 /* PanicAttack Watch Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		888F87BB1BEE3BEE00D7B673 /* InterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 888F87BA1BEE3BEE00D7B673 /* InterfaceController.m */; };
+		888F87BE1BEE3BEE00D7B673 /* ExtensionDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 888F87BD1BEE3BEE00D7B673 /* ExtensionDelegate.m */; };
+		888F87C11BEE3BEE00D7B673 /* GlanceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 888F87C01BEE3BEE00D7B673 /* GlanceController.m */; };
+		888F87C31BEE3BEE00D7B673 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 888F87C21BEE3BEE00D7B673 /* Assets.xcassets */; };
+		888F87C71BEE3BEE00D7B673 /* PanicAttack Watch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 888F87A81BEE3BEE00D7B673 /* PanicAttack Watch.app */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		888F87B61BEE3BEE00D7B673 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 888F87811BEE3AE700D7B673 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 888F87B31BEE3BEE00D7B673;
+			remoteInfo = "PanicAttack Watch Extension";
+		};
+		888F87C51BEE3BEE00D7B673 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 888F87811BEE3AE700D7B673 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 888F87A71BEE3BEE00D7B673;
+			remoteInfo = "PanicAttack Watch";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		888F87CB1BEE3BEE00D7B673 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				888F87B51BEE3BEE00D7B673 /* PanicAttack Watch Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		888F87CF1BEE3BEE00D7B673 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				888F87C71BEE3BEE00D7B673 /* PanicAttack Watch.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		888F87891BEE3AE700D7B673 /* PanicAttack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PanicAttack.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		888F878D1BEE3AE700D7B673 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		888F878F1BEE3AE700D7B673 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		888F87901BEE3AE700D7B673 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		888F87921BEE3AE700D7B673 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		888F87931BEE3AE700D7B673 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		888F87961BEE3AE700D7B673 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		888F87991BEE3AE700D7B673 /* PanicAttack.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PanicAttack.xcdatamodel; sourceTree = "<group>"; };
+		888F879B1BEE3AE700D7B673 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		888F879E1BEE3AE700D7B673 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		888F87A01BEE3AE700D7B673 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		888F87A81BEE3BEE00D7B673 /* PanicAttack Watch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "PanicAttack Watch.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		888F87AB1BEE3BEE00D7B673 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		888F87AD1BEE3BEE00D7B673 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		888F87AF1BEE3BEE00D7B673 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		888F87B41BEE3BEE00D7B673 /* PanicAttack Watch Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "PanicAttack Watch Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		888F87B91BEE3BEE00D7B673 /* InterfaceController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InterfaceController.h; sourceTree = "<group>"; };
+		888F87BA1BEE3BEE00D7B673 /* InterfaceController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InterfaceController.m; sourceTree = "<group>"; };
+		888F87BC1BEE3BEE00D7B673 /* ExtensionDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ExtensionDelegate.h; sourceTree = "<group>"; };
+		888F87BD1BEE3BEE00D7B673 /* ExtensionDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ExtensionDelegate.m; sourceTree = "<group>"; };
+		888F87BF1BEE3BEE00D7B673 /* GlanceController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GlanceController.h; sourceTree = "<group>"; };
+		888F87C01BEE3BEE00D7B673 /* GlanceController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GlanceController.m; sourceTree = "<group>"; };
+		888F87C21BEE3BEE00D7B673 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		888F87C41BEE3BEE00D7B673 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		888F87861BEE3AE700D7B673 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		888F87B11BEE3BEE00D7B673 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		888F87801BEE3AE700D7B673 = {
+			isa = PBXGroup;
+			children = (
+				888F878B1BEE3AE700D7B673 /* PanicAttack */,
+				888F87A91BEE3BEE00D7B673 /* PanicAttack Watch */,
+				888F87B81BEE3BEE00D7B673 /* PanicAttack Watch Extension */,
+				888F878A1BEE3AE700D7B673 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		888F878A1BEE3AE700D7B673 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				888F87891BEE3AE700D7B673 /* PanicAttack.app */,
+				888F87A81BEE3BEE00D7B673 /* PanicAttack Watch.app */,
+				888F87B41BEE3BEE00D7B673 /* PanicAttack Watch Extension.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		888F878B1BEE3AE700D7B673 /* PanicAttack */ = {
+			isa = PBXGroup;
+			children = (
+				888F878F1BEE3AE700D7B673 /* AppDelegate.h */,
+				888F87901BEE3AE700D7B673 /* AppDelegate.m */,
+				888F87921BEE3AE700D7B673 /* ViewController.h */,
+				888F87931BEE3AE700D7B673 /* ViewController.m */,
+				888F87951BEE3AE700D7B673 /* Main.storyboard */,
+				888F879B1BEE3AE700D7B673 /* Assets.xcassets */,
+				888F879D1BEE3AE700D7B673 /* LaunchScreen.storyboard */,
+				888F87A01BEE3AE700D7B673 /* Info.plist */,
+				888F87981BEE3AE700D7B673 /* PanicAttack.xcdatamodeld */,
+				888F878C1BEE3AE700D7B673 /* Supporting Files */,
+			);
+			path = PanicAttack;
+			sourceTree = "<group>";
+		};
+		888F878C1BEE3AE700D7B673 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				888F878D1BEE3AE700D7B673 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		888F87A91BEE3BEE00D7B673 /* PanicAttack Watch */ = {
+			isa = PBXGroup;
+			children = (
+				888F87AA1BEE3BEE00D7B673 /* Interface.storyboard */,
+				888F87AD1BEE3BEE00D7B673 /* Assets.xcassets */,
+				888F87AF1BEE3BEE00D7B673 /* Info.plist */,
+			);
+			path = "PanicAttack Watch";
+			sourceTree = "<group>";
+		};
+		888F87B81BEE3BEE00D7B673 /* PanicAttack Watch Extension */ = {
+			isa = PBXGroup;
+			children = (
+				888F87B91BEE3BEE00D7B673 /* InterfaceController.h */,
+				888F87BA1BEE3BEE00D7B673 /* InterfaceController.m */,
+				888F87BC1BEE3BEE00D7B673 /* ExtensionDelegate.h */,
+				888F87BD1BEE3BEE00D7B673 /* ExtensionDelegate.m */,
+				888F87BF1BEE3BEE00D7B673 /* GlanceController.h */,
+				888F87C01BEE3BEE00D7B673 /* GlanceController.m */,
+				888F87C21BEE3BEE00D7B673 /* Assets.xcassets */,
+				888F87C41BEE3BEE00D7B673 /* Info.plist */,
+			);
+			path = "PanicAttack Watch Extension";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		888F87881BEE3AE700D7B673 /* PanicAttack */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 888F87A31BEE3AE700D7B673 /* Build configuration list for PBXNativeTarget "PanicAttack" */;
+			buildPhases = (
+				888F87851BEE3AE700D7B673 /* Sources */,
+				888F87861BEE3AE700D7B673 /* Frameworks */,
+				888F87871BEE3AE700D7B673 /* Resources */,
+				888F87CF1BEE3BEE00D7B673 /* Embed Watch Content */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				888F87C61BEE3BEE00D7B673 /* PBXTargetDependency */,
+			);
+			name = PanicAttack;
+			productName = PanicAttack;
+			productReference = 888F87891BEE3AE700D7B673 /* PanicAttack.app */;
+			productType = "com.apple.product-type.application";
+		};
+		888F87A71BEE3BEE00D7B673 /* PanicAttack Watch */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 888F87CC1BEE3BEE00D7B673 /* Build configuration list for PBXNativeTarget "PanicAttack Watch" */;
+			buildPhases = (
+				888F87A61BEE3BEE00D7B673 /* Resources */,
+				888F87CB1BEE3BEE00D7B673 /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				888F87B71BEE3BEE00D7B673 /* PBXTargetDependency */,
+			);
+			name = "PanicAttack Watch";
+			productName = "PanicAttack Watch";
+			productReference = 888F87A81BEE3BEE00D7B673 /* PanicAttack Watch.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		888F87B31BEE3BEE00D7B673 /* PanicAttack Watch Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 888F87C81BEE3BEE00D7B673 /* Build configuration list for PBXNativeTarget "PanicAttack Watch Extension" */;
+			buildPhases = (
+				888F87B01BEE3BEE00D7B673 /* Sources */,
+				888F87B11BEE3BEE00D7B673 /* Frameworks */,
+				888F87B21BEE3BEE00D7B673 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "PanicAttack Watch Extension";
+			productName = "PanicAttack Watch Extension";
+			productReference = 888F87B41BEE3BEE00D7B673 /* PanicAttack Watch Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		888F87811BEE3AE700D7B673 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0710;
+				ORGANIZATIONNAME = PanicTeam;
+				TargetAttributes = {
+					888F87881BEE3AE700D7B673 = {
+						CreatedOnToolsVersion = 7.1;
+					};
+					888F87A71BEE3BEE00D7B673 = {
+						CreatedOnToolsVersion = 7.1;
+					};
+					888F87B31BEE3BEE00D7B673 = {
+						CreatedOnToolsVersion = 7.1;
+					};
+				};
+			};
+			buildConfigurationList = 888F87841BEE3AE700D7B673 /* Build configuration list for PBXProject "PanicAttack" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 888F87801BEE3AE700D7B673;
+			productRefGroup = 888F878A1BEE3AE700D7B673 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				888F87881BEE3AE700D7B673 /* PanicAttack */,
+				888F87A71BEE3BEE00D7B673 /* PanicAttack Watch */,
+				888F87B31BEE3BEE00D7B673 /* PanicAttack Watch Extension */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		888F87871BEE3AE700D7B673 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				888F879F1BEE3AE700D7B673 /* LaunchScreen.storyboard in Resources */,
+				888F879C1BEE3AE700D7B673 /* Assets.xcassets in Resources */,
+				888F87971BEE3AE700D7B673 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		888F87A61BEE3BEE00D7B673 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				888F87AE1BEE3BEE00D7B673 /* Assets.xcassets in Resources */,
+				888F87AC1BEE3BEE00D7B673 /* Interface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		888F87B21BEE3BEE00D7B673 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				888F87C31BEE3BEE00D7B673 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		888F87851BEE3AE700D7B673 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				888F87941BEE3AE700D7B673 /* ViewController.m in Sources */,
+				888F87911BEE3AE700D7B673 /* AppDelegate.m in Sources */,
+				888F878E1BEE3AE700D7B673 /* main.m in Sources */,
+				888F879A1BEE3AE700D7B673 /* PanicAttack.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		888F87B01BEE3BEE00D7B673 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				888F87BE1BEE3BEE00D7B673 /* ExtensionDelegate.m in Sources */,
+				888F87BB1BEE3BEE00D7B673 /* InterfaceController.m in Sources */,
+				888F87C11BEE3BEE00D7B673 /* GlanceController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		888F87B71BEE3BEE00D7B673 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 888F87B31BEE3BEE00D7B673 /* PanicAttack Watch Extension */;
+			targetProxy = 888F87B61BEE3BEE00D7B673 /* PBXContainerItemProxy */;
+		};
+		888F87C61BEE3BEE00D7B673 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 888F87A71BEE3BEE00D7B673 /* PanicAttack Watch */;
+			targetProxy = 888F87C51BEE3BEE00D7B673 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		888F87951BEE3AE700D7B673 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				888F87961BEE3AE700D7B673 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		888F879D1BEE3AE700D7B673 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				888F879E1BEE3AE700D7B673 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		888F87AA1BEE3BEE00D7B673 /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				888F87AB1BEE3BEE00D7B673 /* Base */,
+			);
+			name = Interface.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		888F87A11BEE3AE700D7B673 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		888F87A21BEE3AE700D7B673 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		888F87A41BEE3AE700D7B673 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = PanicAttack/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.3PillarGlobal.PanicAttack.PanicAttack;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		888F87A51BEE3AE700D7B673 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = PanicAttack/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.3PillarGlobal.PanicAttack.PanicAttack;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		888F87C91BEE3BEE00D7B673 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "PanicAttack Watch Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.3PillarGlobal.PanicAttack.PanicAttack.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = Debug;
+		};
+		888F87CA1BEE3BEE00D7B673 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "PanicAttack Watch Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.3PillarGlobal.PanicAttack.PanicAttack.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = Release;
+		};
+		888F87CD1BEE3BEE00D7B673 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				IBSC_MODULE = PanicAttack_Watch_Extension;
+				INFOPLIST_FILE = "PanicAttack Watch/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = com.3PillarGlobal.PanicAttack.PanicAttack.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = Debug;
+		};
+		888F87CE1BEE3BEE00D7B673 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				IBSC_MODULE = PanicAttack_Watch_Extension;
+				INFOPLIST_FILE = "PanicAttack Watch/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = com.3PillarGlobal.PanicAttack.PanicAttack.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		888F87841BEE3AE700D7B673 /* Build configuration list for PBXProject "PanicAttack" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				888F87A11BEE3AE700D7B673 /* Debug */,
+				888F87A21BEE3AE700D7B673 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		888F87A31BEE3AE700D7B673 /* Build configuration list for PBXNativeTarget "PanicAttack" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				888F87A41BEE3AE700D7B673 /* Debug */,
+				888F87A51BEE3AE700D7B673 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		888F87C81BEE3BEE00D7B673 /* Build configuration list for PBXNativeTarget "PanicAttack Watch Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				888F87C91BEE3BEE00D7B673 /* Debug */,
+				888F87CA1BEE3BEE00D7B673 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		888F87CC1BEE3BEE00D7B673 /* Build configuration list for PBXNativeTarget "PanicAttack Watch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				888F87CD1BEE3BEE00D7B673 /* Debug */,
+				888F87CE1BEE3BEE00D7B673 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		888F87981BEE3AE700D7B673 /* PanicAttack.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				888F87991BEE3AE700D7B673 /* PanicAttack.xcdatamodel */,
+			);
+			currentVersion = 888F87991BEE3AE700D7B673 /* PanicAttack.xcdatamodel */;
+			path = PanicAttack.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 888F87811BEE3AE700D7B673 /* Project object */;
+}
