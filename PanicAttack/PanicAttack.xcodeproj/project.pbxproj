@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		2955F0981BEE57AF00648BB4 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2955F0971BEE57AF00648BB4 /* HealthKit.framework */; };
 		2955F09A1BEE59D400648BB4 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2955F0991BEE59D400648BB4 /* HealthKit.framework */; };
+		888523781BEE5CFA003AE390 /* PanicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 888523761BEE5CFA003AE390 /* PanicViewController.m */; };
+		888523791BEE5CFA003AE390 /* PanicViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 888523771BEE5CFA003AE390 /* PanicViewController.xib */; };
+		8885237D1BEE5F82003AE390 /* HistoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8885237B1BEE5F82003AE390 /* HistoryViewController.m */; };
+		8885237E1BEE5F82003AE390 /* HistoryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8885237C1BEE5F82003AE390 /* HistoryViewController.xib */; };
 		888E6F581BEE437400DBC93C /* File in Resources */ = {isa = PBXBuildFile; fileRef = 888E6F571BEE437400DBC93C /* File */; };
 		888E6F591BEE437400DBC93C /* File in Resources */ = {isa = PBXBuildFile; fileRef = 888E6F571BEE437400DBC93C /* File */; };
 		888E6F5A1BEE437400DBC93C /* File in Resources */ = {isa = PBXBuildFile; fileRef = 888E6F571BEE437400DBC93C /* File */; };
@@ -106,6 +110,12 @@
 		29240CDC1BEE4AB100B0DD7E /* PanicAttack Watch Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "PanicAttack Watch Extension.entitlements"; sourceTree = "<group>"; };
 		2955F0971BEE57AF00648BB4 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS2.0.sdk/System/Library/Frameworks/HealthKit.framework; sourceTree = DEVELOPER_DIR; };
 		2955F0991BEE59D400648BB4 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
+		888523751BEE5CFA003AE390 /* PanicViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PanicViewController.h; sourceTree = "<group>"; };
+		888523761BEE5CFA003AE390 /* PanicViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PanicViewController.m; sourceTree = "<group>"; };
+		888523771BEE5CFA003AE390 /* PanicViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PanicViewController.xib; sourceTree = "<group>"; };
+		8885237A1BEE5F82003AE390 /* HistoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HistoryViewController.h; sourceTree = "<group>"; };
+		8885237B1BEE5F82003AE390 /* HistoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HistoryViewController.m; sourceTree = "<group>"; };
+		8885237C1BEE5F82003AE390 /* HistoryViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HistoryViewController.xib; sourceTree = "<group>"; };
 		888E6F571BEE437400DBC93C /* File */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = File; sourceTree = "<group>"; };
 		888E6F5F1BEE438500DBC93C /* File */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = File; sourceTree = "<group>"; };
 		888F87891BEE3AE700D7B673 /* PanicAttack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PanicAttack.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -334,7 +344,12 @@
 		888F87D41BEE3F8B00D7B673 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				888E6F571BEE437400DBC93C /* File */,
+				888523751BEE5CFA003AE390 /* PanicViewController.h */,
+				888523761BEE5CFA003AE390 /* PanicViewController.m */,
+				888523771BEE5CFA003AE390 /* PanicViewController.xib */,
+				8885237A1BEE5F82003AE390 /* HistoryViewController.h */,
+				8885237B1BEE5F82003AE390 /* HistoryViewController.m */,
+				8885237C1BEE5F82003AE390 /* HistoryViewController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -514,8 +529,9 @@
 			files = (
 				888F879F1BEE3AE700D7B673 /* LaunchScreen.storyboard in Resources */,
 				888F879C1BEE3AE700D7B673 /* Assets.xcassets in Resources */,
-				888E6F581BEE437400DBC93C /* File in Resources */,
+				888523791BEE5CFA003AE390 /* PanicViewController.xib in Resources */,
 				888E6F601BEE438500DBC93C /* File in Resources */,
+				8885237E1BEE5F82003AE390 /* HistoryViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -525,7 +541,6 @@
 			files = (
 				888F87AE1BEE3BEE00D7B673 /* Assets.xcassets in Resources */,
 				888F87AC1BEE3BEE00D7B673 /* Interface.storyboard in Resources */,
-				888E6F591BEE437400DBC93C /* File in Resources */,
 				888E6F611BEE438500DBC93C /* File in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -535,7 +550,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				888E6F621BEE438500DBC93C /* File in Resources */,
-				888E6F5A1BEE437400DBC93C /* File in Resources */,
 				888F87C31BEE3BEE00D7B673 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -554,6 +568,8 @@
 				888F87911BEE3AE700D7B673 /* AppDelegate.m in Sources */,
 				A725AB221BEE5572009A8544 /* Medication.m in Sources */,
 				888F878E1BEE3AE700D7B673 /* main.m in Sources */,
+				888523781BEE5CFA003AE390 /* PanicViewController.m in Sources */,
+				8885237D1BEE5F82003AE390 /* HistoryViewController.m in Sources */,
 				A725AB1D1BEE5572009A8544 /* Symptom+CoreDataProperties.m in Sources */,
 				A725AAE01BEE5250009A8544 /* DataHandler.m in Sources */,
 				A725AB1E1BEE5572009A8544 /* Symptom.m in Sources */,

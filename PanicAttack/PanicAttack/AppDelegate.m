@@ -7,6 +7,8 @@
 //
 
 #import "AppDelegate.h"
+#import "PanicViewController.h"
+#import "HistoryViewController.h"
 #import "UserProfile.h"
 #import <Parse/Parse.h>
 
@@ -28,6 +30,8 @@
     self.window = [[UIWindow alloc] initWithFrame: [[UIScreen mainScreen] bounds]];
     
     UITabBarController *tabController = [UITabBarController new];
+    tabController.title = @"Panic Attack";
+    tabController.viewControllers = [self tabViewControllers];
     
     UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController: tabController];
     
@@ -35,6 +39,14 @@
     [self.window makeKeyAndVisible];
     
     return YES;
+}
+
+- (NSArray *) tabViewControllers {
+    PanicViewController *panicVC = [[PanicViewController alloc] initWithNibName: @"PanicViewController" bundle: nil];
+    
+    HistoryViewController *historyVC = [[HistoryViewController alloc] initWithNibName: @"HistoryViewController" bundle: nil];
+    
+    return @[panicVC, historyVC];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {
