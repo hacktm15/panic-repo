@@ -11,8 +11,17 @@
 #import "HistoryViewController.h"
 #import "UserProfile.h"
 #import <Parse/Parse.h>
+#import <WatchConnectivity/WatchConnectivity.h>
 
-@interface AppDelegate ()
+static NSString *kPanicButtonKey = @"panicButtonKey";
+
+typedef NS_ENUM (NSUInteger, PanicButtonState) {
+    StartPanicEvent = 0,
+    StopPanicEvent,
+    Waiting,
+};
+
+@interface AppDelegate () <WCSessionDelegate>
 
 @end
 
@@ -37,7 +46,9 @@
     
     [self.window setRootViewController: navController];
     [self.window makeKeyAndVisible];
-    
+
+    [self establishSession];
+
     return YES;
 }
 
@@ -61,6 +72,8 @@
 
 - (void)applicationWillEnterForeground:(UIApplication *)application {
     // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
+
+    [self establishSession];
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
@@ -106,6 +119,20 @@
     event.symptoms = symptoms;
     
     [event saveInBackground];
+}
+
+#pragma mark - WatchKit
+- (void) establishSession {
+    if ([WCSession isSupported]) {
+        WCSession* session = [WCSession defaultSession];
+        session.delegate = self;
+        [session activateSession];
+    }
+}
+
+- (void) session: (WCSession *) session didReceiveMessage: (NSDictionary <NSString *, id> *) message replyHandler: (void (^)(NSDictionary <NSString *, id> *_Nonnull)) replyHandler {
+    replyHandler(@{kPanicButtonKey : @(StopPanicEvent)});
+
 }
 
 @end
