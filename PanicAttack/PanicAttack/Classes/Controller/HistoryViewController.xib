@@ -7,6 +7,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HistoryViewController">
             <connections>
+                <outlet property="eventTable" destination="LRd-RS-5sv" id="LUa-7j-jwq"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -19,6 +20,10 @@
                     <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                     <animations/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="NBS-29-UnS"/>
+                        <outlet property="delegate" destination="-1" id="sJC-sZ-OId"/>
+                    </connections>
                 </tableView>
             </subviews>
             <animations/>

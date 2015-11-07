@@ -7,6 +7,7 @@
 //
 
 #import "PanicViewController.h"
+#import "DataHandler.h"
 
 @interface PanicViewController ()
 
@@ -16,6 +17,7 @@
 @property (nonatomic) BOOL inProgress;
 @property (nonatomic) NSDate *startDate;
 @property (nonatomic) NSTimer *timer;
+@property (nonatomic) DataHandler *dataHandler;
 
 @end
 
@@ -34,6 +36,7 @@
     self.timerLabel.text = @"";
     
     self.inProgress = NO;
+    self.dataHandler = [DataHandler new];
 }
 
 #pragma mark - Private
@@ -42,10 +45,18 @@
     return [NSString stringWithFormat: @"%.0f", [[NSDate date] timeIntervalSinceDate: self.startDate]];
 }
 
-- (void) starTimer {
+- (void) startPanicEvent {
     self.startDate = [NSDate date];
     self.timerLabel.text = @"0";
     
+    [self starTimer];
+}
+
+- (void) stopPanicEvent {
+    [self stopTimer];
+}
+
+- (void) starTimer {
     self.timer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector: @selector(tick:) userInfo:nil repeats:YES];
 }
 
@@ -67,9 +78,9 @@
     
     [self.startStopButton setTitle: self.inProgress ? @"Stop" : @"Start" forState: UIControlStateNormal];
     if (self.inProgress) {
-        [self starTimer];
+        [self startPanicEvent];
     } else {
-        [self stopTimer];
+        [self stopPanicEvent];
     }
 }
 
