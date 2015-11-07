@@ -23,6 +23,9 @@ typedef NS_ENUM (NSUInteger, PanicButtonState) {
 
 @interface AppDelegate () <WCSessionDelegate>
 
+@property (nonatomic) PanicViewController *panicVC;
+@property (nonatomic) HistoryViewController *historyVC;
+
 @end
 
 @implementation AppDelegate
@@ -53,11 +56,11 @@ typedef NS_ENUM (NSUInteger, PanicButtonState) {
 }
 
 - (NSArray *) tabViewControllers {
-    PanicViewController *panicVC = [[PanicViewController alloc] initWithNibName: @"PanicViewController" bundle: nil];
+    self.panicVC = [[PanicViewController alloc] initWithNibName: @"PanicViewController" bundle: nil];
     
-    HistoryViewController *historyVC = [[HistoryViewController alloc] initWithNibName: @"HistoryViewController" bundle: nil];
+    self.historyVC = [[HistoryViewController alloc] initWithNibName: @"HistoryViewController" bundle: nil];
     
-    return @[panicVC, historyVC];
+    return @[self.panicVC, self.historyVC];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {
@@ -119,6 +122,12 @@ typedef NS_ENUM (NSUInteger, PanicButtonState) {
     event.symptoms = symptoms;
     
     [event saveInBackground];
+}
+
+#pragma mark - Public
+
+- (void)eventProgressChangedInApp:(BOOL)inProgress {
+    
 }
 
 #pragma mark - WatchKit

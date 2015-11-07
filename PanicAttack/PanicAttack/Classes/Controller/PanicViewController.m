@@ -8,6 +8,7 @@
 
 #import "PanicViewController.h"
 #import "DataHandler.h"
+#import "AppDelegate.h"
 
 @interface PanicViewController ()
 
@@ -17,7 +18,6 @@
 @property (nonatomic) BOOL inProgress;
 @property (nonatomic) NSDate *startDate;
 @property (nonatomic) NSTimer *timer;
-@property (nonatomic) DataHandler *dataHandler;
 
 @end
 
@@ -36,10 +36,26 @@
     self.timerLabel.text = @"";
     
     self.inProgress = NO;
-    self.dataHandler = [DataHandler new];
+    [self.startStopButton setTitle: self.inProgress ? @"Stop" : @"Start" forState: UIControlStateNormal];
 }
 
 #pragma mark - Private
+
+- (void)setInProgress:(BOOL)inProgress {
+    if (self.inProgress != inProgress) {
+        _inProgress = inProgress;
+        
+        [self.startStopButton setTitle: self.inProgress ? @"Stop" : @"Start" forState: UIControlStateNormal];
+        if (self.inProgress) {
+            [self startPanicEvent];
+        } else {
+            [self stopPanicEvent];
+        }
+        
+        AppDelegate *appDel = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+        [appDel eventProgressChangedInApp: self.inProgress];
+    }
+}
 
 - (NSString *) formatedTime {
     return [NSString stringWithFormat: @"%.0f", [[NSDate date] timeIntervalSinceDate: self.startDate]];
@@ -71,17 +87,23 @@
     self.timerLabel.text = [self formatedTime];
 }
 
+#pragma mark - Public
+
+- (BOOL)isEventInProgress {
+    return self.inProgress;
+}
+
+- (void)changeEventToInProgress:(BOOL)status {
+    if (self.inProgress == status) {
+        return;
+    }
+    self.inProgress = status;
+}
+
 #pragma mark - Actions
 
 - (IBAction)startStopButtonPressed:(id)sender {
     self.inProgress = !self.inProgress;
-    
-    [self.startStopButton setTitle: self.inProgress ? @"Stop" : @"Start" forState: UIControlStateNormal];
-    if (self.inProgress) {
-        [self startPanicEvent];
-    } else {
-        [self stopPanicEvent];
-    }
 }
 
 @end
