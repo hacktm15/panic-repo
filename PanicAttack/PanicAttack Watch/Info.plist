@@ -28,7 +28,7 @@
 		<string>UIInterfaceOrientationPortraitUpsideDown</string>
 	</array>
 	<key>WKCompanionAppBundleIdentifier</key>
-	<string>com.3PillarGlobal.PanicAttack.PanicAttack</string>
+	<string>com.3PillarGlobal.PanicAttack</string>
 	<key>WKWatchKitApp</key>
 	<true/>
 </dict>
