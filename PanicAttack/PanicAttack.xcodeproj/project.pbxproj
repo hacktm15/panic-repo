@@ -7,10 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		888E6F581BEE437400DBC93C /* File in Resources */ = {isa = PBXBuildFile; fileRef = 888E6F571BEE437400DBC93C /* File */; };
+		888E6F591BEE437400DBC93C /* File in Resources */ = {isa = PBXBuildFile; fileRef = 888E6F571BEE437400DBC93C /* File */; };
+		888E6F5A1BEE437400DBC93C /* File in Resources */ = {isa = PBXBuildFile; fileRef = 888E6F571BEE437400DBC93C /* File */; };
+		888E6F5C1BEE437C00DBC93C /* File in Resources */ = {isa = PBXBuildFile; fileRef = 888E6F5B1BEE437C00DBC93C /* File */; };
+		888E6F5D1BEE437C00DBC93C /* File in Resources */ = {isa = PBXBuildFile; fileRef = 888E6F5B1BEE437C00DBC93C /* File */; };
+		888E6F5E1BEE437C00DBC93C /* File in Resources */ = {isa = PBXBuildFile; fileRef = 888E6F5B1BEE437C00DBC93C /* File */; };
+		888E6F601BEE438500DBC93C /* File in Resources */ = {isa = PBXBuildFile; fileRef = 888E6F5F1BEE438500DBC93C /* File */; };
+		888E6F611BEE438500DBC93C /* File in Resources */ = {isa = PBXBuildFile; fileRef = 888E6F5F1BEE438500DBC93C /* File */; };
+		888E6F621BEE438500DBC93C /* File in Resources */ = {isa = PBXBuildFile; fileRef = 888E6F5F1BEE438500DBC93C /* File */; };
 		888F878E1BEE3AE700D7B673 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 888F878D1BEE3AE700D7B673 /* main.m */; };
 		888F87911BEE3AE700D7B673 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 888F87901BEE3AE700D7B673 /* AppDelegate.m */; };
-		888F87941BEE3AE700D7B673 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 888F87931BEE3AE700D7B673 /* ViewController.m */; };
-		888F87971BEE3AE700D7B673 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 888F87951BEE3AE700D7B673 /* Main.storyboard */; };
 		888F879A1BEE3AE700D7B673 /* PanicAttack.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 888F87981BEE3AE700D7B673 /* PanicAttack.xcdatamodeld */; };
 		888F879C1BEE3AE700D7B673 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 888F879B1BEE3AE700D7B673 /* Assets.xcassets */; };
 		888F879F1BEE3AE700D7B673 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 888F879D1BEE3AE700D7B673 /* LaunchScreen.storyboard */; };
@@ -67,13 +74,13 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		888E6F571BEE437400DBC93C /* File */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = File; sourceTree = "<group>"; };
+		888E6F5B1BEE437C00DBC93C /* File */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = File; sourceTree = "<group>"; };
+		888E6F5F1BEE438500DBC93C /* File */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = File; sourceTree = "<group>"; };
 		888F87891BEE3AE700D7B673 /* PanicAttack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PanicAttack.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		888F878D1BEE3AE700D7B673 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		888F878F1BEE3AE700D7B673 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		888F87901BEE3AE700D7B673 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		888F87921BEE3AE700D7B673 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		888F87931BEE3AE700D7B673 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		888F87961BEE3AE700D7B673 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		888F87991BEE3AE700D7B673 /* PanicAttack.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PanicAttack.xcdatamodel; sourceTree = "<group>"; };
 		888F879B1BEE3AE700D7B673 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		888F879E1BEE3AE700D7B673 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -134,11 +141,9 @@
 		888F878B1BEE3AE700D7B673 /* PanicAttack */ = {
 			isa = PBXGroup;
 			children = (
+				888F87D31BEE3F8B00D7B673 /* Classes */,
 				888F878F1BEE3AE700D7B673 /* AppDelegate.h */,
 				888F87901BEE3AE700D7B673 /* AppDelegate.m */,
-				888F87921BEE3AE700D7B673 /* ViewController.h */,
-				888F87931BEE3AE700D7B673 /* ViewController.m */,
-				888F87951BEE3AE700D7B673 /* Main.storyboard */,
 				888F879B1BEE3AE700D7B673 /* Assets.xcassets */,
 				888F879D1BEE3AE700D7B673 /* LaunchScreen.storyboard */,
 				888F87A01BEE3AE700D7B673 /* Info.plist */,
@@ -179,6 +184,40 @@
 				888F87C41BEE3BEE00D7B673 /* Info.plist */,
 			);
 			path = "PanicAttack Watch Extension";
+			sourceTree = "<group>";
+		};
+		888F87D31BEE3F8B00D7B673 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				888F87D41BEE3F8B00D7B673 /* Controller */,
+				888F87D51BEE3F8B00D7B673 /* Model */,
+				888F87D61BEE3F8B00D7B673 /* View */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		888F87D41BEE3F8B00D7B673 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				888E6F571BEE437400DBC93C /* File */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		888F87D51BEE3F8B00D7B673 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				888E6F5B1BEE437C00DBC93C /* File */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		888F87D61BEE3F8B00D7B673 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				888E6F5F1BEE438500DBC93C /* File */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -282,9 +321,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				888E6F5C1BEE437C00DBC93C /* File in Resources */,
 				888F879F1BEE3AE700D7B673 /* LaunchScreen.storyboard in Resources */,
 				888F879C1BEE3AE700D7B673 /* Assets.xcassets in Resources */,
-				888F87971BEE3AE700D7B673 /* Main.storyboard in Resources */,
+				888E6F581BEE437400DBC93C /* File in Resources */,
+				888E6F601BEE438500DBC93C /* File in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -292,8 +333,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				888E6F5D1BEE437C00DBC93C /* File in Resources */,
 				888F87AE1BEE3BEE00D7B673 /* Assets.xcassets in Resources */,
 				888F87AC1BEE3BEE00D7B673 /* Interface.storyboard in Resources */,
+				888E6F591BEE437400DBC93C /* File in Resources */,
+				888E6F611BEE438500DBC93C /* File in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -301,7 +345,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				888E6F621BEE438500DBC93C /* File in Resources */,
+				888E6F5A1BEE437400DBC93C /* File in Resources */,
 				888F87C31BEE3BEE00D7B673 /* Assets.xcassets in Resources */,
+				888E6F5E1BEE437C00DBC93C /* File in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -312,7 +359,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				888F87941BEE3AE700D7B673 /* ViewController.m in Sources */,
 				888F87911BEE3AE700D7B673 /* AppDelegate.m in Sources */,
 				888F878E1BEE3AE700D7B673 /* main.m in Sources */,
 				888F879A1BEE3AE700D7B673 /* PanicAttack.xcdatamodeld in Sources */,
@@ -345,14 +391,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		888F87951BEE3AE700D7B673 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				888F87961BEE3AE700D7B673 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		888F879D1BEE3AE700D7B673 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -408,7 +446,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -445,7 +483,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -456,6 +494,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = PanicAttack/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.3PillarGlobal.PanicAttack.PanicAttack;
@@ -467,6 +506,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = PanicAttack/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.3PillarGlobal.PanicAttack.PanicAttack;
@@ -551,6 +591,7 @@
 				888F87A51BEE3AE700D7B673 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		888F87C81BEE3BEE00D7B673 /* Build configuration list for PBXNativeTarget "PanicAttack Watch Extension" */ = {
 			isa = XCConfigurationList;
@@ -559,6 +600,7 @@
 				888F87CA1BEE3BEE00D7B673 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		888F87CC1BEE3BEE00D7B673 /* Build configuration list for PBXNativeTarget "PanicAttack Watch" */ = {
 			isa = XCConfigurationList;
@@ -567,6 +609,7 @@
 				888F87CE1BEE3BEE00D7B673 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
