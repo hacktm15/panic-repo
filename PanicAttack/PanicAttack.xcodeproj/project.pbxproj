@@ -135,10 +135,26 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		888F87801BEE3AE700D7B673 = {
+		29240CDF1BEE4B9F00B0DD7E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 				29240CDD1BEE4AB900B0DD7E /* HomeKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		29240CE01BEE4BC100B0DD7E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				888F87C41BEE3BEE00D7B673 /* Info.plist */,
+				29240CDC1BEE4AB100B0DD7E /* PanicAttack Watch Extension.entitlements */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		888F87801BEE3AE700D7B673 = {
+			isa = PBXGroup;
+			children = (
 				888F878B1BEE3AE700D7B673 /* PanicAttack */,
 				888F87A91BEE3BEE00D7B673 /* PanicAttack Watch */,
 				888F87B81BEE3BEE00D7B673 /* PanicAttack Watch Extension */,
@@ -164,7 +180,6 @@
 				888F87901BEE3AE700D7B673 /* AppDelegate.m */,
 				888F879B1BEE3AE700D7B673 /* Assets.xcassets */,
 				888F879D1BEE3AE700D7B673 /* LaunchScreen.storyboard */,
-				888F87A01BEE3AE700D7B673 /* Info.plist */,
 				888F87981BEE3AE700D7B673 /* PanicAttack.xcdatamodeld */,
 				888F878C1BEE3AE700D7B673 /* Supporting Files */,
 				29240CDA1BEE4A6500B0DD7E /* Frameworks */,
@@ -175,6 +190,7 @@
 		888F878C1BEE3AE700D7B673 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				888F87A01BEE3AE700D7B673 /* Info.plist */,
 				29240CD71BEE4A4200B0DD7E /* PanicAttack.entitlements */,
 				888F878D1BEE3AE700D7B673 /* main.m */,
 			);
@@ -195,7 +211,6 @@
 		888F87B81BEE3BEE00D7B673 /* PanicAttack Watch Extension */ = {
 			isa = PBXGroup;
 			children = (
-				29240CDC1BEE4AB100B0DD7E /* PanicAttack Watch Extension.entitlements */,
 				888F87B91BEE3BEE00D7B673 /* InterfaceController.h */,
 				888F87BA1BEE3BEE00D7B673 /* InterfaceController.m */,
 				888F87BC1BEE3BEE00D7B673 /* ExtensionDelegate.h */,
@@ -203,7 +218,8 @@
 				888F87BF1BEE3BEE00D7B673 /* GlanceController.h */,
 				888F87C01BEE3BEE00D7B673 /* GlanceController.m */,
 				888F87C21BEE3BEE00D7B673 /* Assets.xcassets */,
-				888F87C41BEE3BEE00D7B673 /* Info.plist */,
+				29240CE01BEE4BC100B0DD7E /* Supporting Files */,
+				29240CDF1BEE4B9F00B0DD7E /* Frameworks */,
 			);
 			path = "PanicAttack Watch Extension";
 			sourceTree = "<group>";
