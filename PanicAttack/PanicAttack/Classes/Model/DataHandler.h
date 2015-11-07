@@ -14,18 +14,16 @@
 
 @interface DataHandler : NSObject
 
-- (void)save;
-
 - (User *)createUserWithEmail:(NSString *)email;
-- (User *)fetchLoggedUser;
+- (void)fetchUserWithEmail:(NSString *)email completionBlock:(PFQueryArrayResultBlock)completion;
 
 - (Event *)createEventWithStartDate:(NSDate *)startDate;
-- (NSArray *)fetchEvents;
+- (void)fetchEventsWithCompletionBlock:(PFQueryArrayResultBlock)completion;
 
 - (Medication *)createMedicationWithName:(NSString *)name;
-- (NSArray *)fetchMedicationsWithName:(NSString *)name;
+- (void)fetchMedicationsWithName:(NSString *)name completionBlock:(PFQueryArrayResultBlock)completion;
 
 - (Symptom *)createSymptomWithName:(NSString *)name;
-- (NSArray *)fetchSymptomsWithName:(NSString *)name;
+- (void)fetchSymptomsWithName:(NSString *)name completionBlock:(PFQueryArrayResultBlock)completion;
 
 @end

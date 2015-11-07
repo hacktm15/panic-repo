@@ -27,8 +27,6 @@
     [super viewWillAppear: animated];
     
     [self.eventTable registerClass: [UITableViewCell class] forCellReuseIdentifier: @"EventCellIdentifier"];
-    
-    self.events = [[UserProfile sharedInstance].dataHandler fetchEvents];
 }
 
 #pragma mark - Table

@@ -13,6 +13,8 @@
 
 @implementation Event
 
-// Insert code here to add functionality to your managed object subclass
++ (NSString *)parseClassName {
+    return @"Event";
+}
 
 @end

@@ -26,13 +26,4 @@ NS_ASSUME_NONNULL_BEGIN
 
 @end
 
-@interface User (CoreDataGeneratedAccessors)
-
-- (void)addEventsObject:(Event *)value;
-- (void)removeEventsObject:(Event *)value;
-- (void)addEvents:(NSSet<Event *> *)values;
-- (void)removeEvents:(NSSet<Event *> *)values;
-
-@end
-
 NS_ASSUME_NONNULL_END

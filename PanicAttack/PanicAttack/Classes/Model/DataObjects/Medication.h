@@ -7,13 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <CoreData/CoreData.h>
+#import <Parse/Parse.h>
 
 @class Event;
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface Medication : NSManagedObject
+@interface Medication : PFObject <PFSubclassing>
 
 // Insert code here to declare functionality of your managed object subclass
 

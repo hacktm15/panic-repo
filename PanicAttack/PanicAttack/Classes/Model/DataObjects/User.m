@@ -11,6 +11,8 @@
 
 @implementation User
 
-// Insert code here to add functionality to your managed object subclass
++ (NSString *)parseClassName {
+    return @"User";
+}
 
 @end

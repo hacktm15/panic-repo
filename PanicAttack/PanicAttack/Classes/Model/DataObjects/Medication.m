@@ -11,6 +11,8 @@
 
 @implementation Medication
 
-// Insert code here to add functionality to your managed object subclass
++ (NSString *)parseClassName {
+    return @"Medication";
+}
 
 @end

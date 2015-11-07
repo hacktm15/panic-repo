@@ -10,6 +10,7 @@
 #import "PanicViewController.h"
 #import "HistoryViewController.h"
 #import "UserProfile.h"
+#import <Parse/Parse.h>
 
 @interface AppDelegate ()
 
@@ -18,12 +19,13 @@
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    [self setupParse];
     
-    NSLog(@"Docs folder: %@", [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) firstObject]);
-    
-    if (![[UserProfile sharedInstance].dataHandler fetchLoggedUser]) {
-        [self createDummyData];
-    }
+    [[UserProfile sharedInstance].dataHandler fetchUserWithEmail:@"user@email.com" completionBlock:^(NSArray<User *> * _Nullable objects, NSError * _Nullable error) {
+        if (objects.count == 0) {
+            [self createDummyData];
+        }
+    }];
     
     self.window = [[UIWindow alloc] initWithFrame: [[UIScreen mainScreen] bounds]];
     
@@ -72,11 +74,22 @@
 
 #pragma mark - Private
 
+- (void)setupParse {
+    [User registerSubclass];
+    [Symptom registerSubclass];
+    [Event registerSubclass];
+    [Medication registerSubclass];
+    [Parse setApplicationId:@"cx8RDcpcylmUJ4jX9FEjrZAlBSy0WGx7RN8VLSvT"
+                  clientKey:@"MftOIZiUAUKeDxRF09LviiPVYvK157guoiKwg9du"];
+}
+
 - (void)createDummyData {
     User *user = [[UserProfile sharedInstance].dataHandler createUserWithEmail:@"user@email.com"];
     
     Event *event = [[UserProfile sharedInstance].dataHandler createEventWithStartDate:[NSDate date]];
     event.user = user;
+    [event saveInBackground];
+    
     event = [[UserProfile sharedInstance].dataHandler createEventWithStartDate:[NSDate dateWithTimeIntervalSinceNow:-518400]];
     event.user = user;
     event.anxietyLevel = @(5);
@@ -86,15 +99,13 @@
     event.fearLevel = @(7);
     event.observations = @"Some observations";
 
-    NSSet *medications = [NSSet setWithArray:@[[[UserProfile sharedInstance].dataHandler createMedicationWithName:@"cancer cure"], [[UserProfile sharedInstance].dataHandler createMedicationWithName:@"AIDS cure"], [[UserProfile sharedInstance].dataHandler createMedicationWithName:@"cantest cure"]]];
+    NSArray *medications = @[[[UserProfile sharedInstance].dataHandler createMedicationWithName:@"cancer cure"], [[UserProfile sharedInstance].dataHandler createMedicationWithName:@"AIDS cure"], [[UserProfile sharedInstance].dataHandler createMedicationWithName:@"cantest cure"]];
     event.medications = medications;
 
-    NSSet *symptoms = [NSSet setWithArray:@[[[UserProfile sharedInstance].dataHandler createSymptomWithName:@"symptom one"],[[UserProfile sharedInstance].dataHandler createSymptomWithName:@"symptom two"], [[UserProfile sharedInstance].dataHandler createSymptomWithName:@"three"]]];
+    NSArray *symptoms = @[[[UserProfile sharedInstance].dataHandler createSymptomWithName:@"symptom one"],[[UserProfile sharedInstance].dataHandler createSymptomWithName:@"symptom two"], [[UserProfile sharedInstance].dataHandler createSymptomWithName:@"three"]];
     event.symptoms = symptoms;
     
-    [[UserProfile sharedInstance].dataHandler save];
-    
-    NSLog(@"%@", [[UserProfile sharedInstance].dataHandler fetchEvents]);
+    [event saveInBackground];
 }
 
 @end
