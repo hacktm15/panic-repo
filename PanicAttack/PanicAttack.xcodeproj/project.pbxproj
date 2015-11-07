@@ -10,9 +10,6 @@
 		888E6F581BEE437400DBC93C /* File in Resources */ = {isa = PBXBuildFile; fileRef = 888E6F571BEE437400DBC93C /* File */; };
 		888E6F591BEE437400DBC93C /* File in Resources */ = {isa = PBXBuildFile; fileRef = 888E6F571BEE437400DBC93C /* File */; };
 		888E6F5A1BEE437400DBC93C /* File in Resources */ = {isa = PBXBuildFile; fileRef = 888E6F571BEE437400DBC93C /* File */; };
-		888E6F5C1BEE437C00DBC93C /* File in Resources */ = {isa = PBXBuildFile; fileRef = 888E6F5B1BEE437C00DBC93C /* File */; };
-		888E6F5D1BEE437C00DBC93C /* File in Resources */ = {isa = PBXBuildFile; fileRef = 888E6F5B1BEE437C00DBC93C /* File */; };
-		888E6F5E1BEE437C00DBC93C /* File in Resources */ = {isa = PBXBuildFile; fileRef = 888E6F5B1BEE437C00DBC93C /* File */; };
 		888E6F601BEE438500DBC93C /* File in Resources */ = {isa = PBXBuildFile; fileRef = 888E6F5F1BEE438500DBC93C /* File */; };
 		888E6F611BEE438500DBC93C /* File in Resources */ = {isa = PBXBuildFile; fileRef = 888E6F5F1BEE438500DBC93C /* File */; };
 		888E6F621BEE438500DBC93C /* File in Resources */ = {isa = PBXBuildFile; fileRef = 888E6F5F1BEE438500DBC93C /* File */; };
@@ -29,6 +26,17 @@
 		888F87C11BEE3BEE00D7B673 /* GlanceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 888F87C01BEE3BEE00D7B673 /* GlanceController.m */; };
 		888F87C31BEE3BEE00D7B673 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 888F87C21BEE3BEE00D7B673 /* Assets.xcassets */; };
 		888F87C71BEE3BEE00D7B673 /* PanicAttack Watch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 888F87A81BEE3BEE00D7B673 /* PanicAttack Watch.app */; };
+		A725AAD71BEE4E2C009A8544 /* CoreDataHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = A725AAD61BEE4E2C009A8544 /* CoreDataHandler.m */; settings = {ASSET_TAGS = (); }; };
+		A725AADD1BEE51C3009A8544 /* UserProfile.m in Sources */ = {isa = PBXBuildFile; fileRef = A725AADC1BEE51C3009A8544 /* UserProfile.m */; settings = {ASSET_TAGS = (); }; };
+		A725AAE01BEE5250009A8544 /* DataHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = A725AADF1BEE5250009A8544 /* DataHandler.m */; settings = {ASSET_TAGS = (); }; };
+		A725AB1B1BEE5572009A8544 /* User+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = A725AB0B1BEE5572009A8544 /* User+CoreDataProperties.m */; settings = {ASSET_TAGS = (); }; };
+		A725AB1C1BEE5572009A8544 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = A725AB0D1BEE5572009A8544 /* User.m */; settings = {ASSET_TAGS = (); }; };
+		A725AB1D1BEE5572009A8544 /* Symptom+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = A725AB0F1BEE5572009A8544 /* Symptom+CoreDataProperties.m */; settings = {ASSET_TAGS = (); }; };
+		A725AB1E1BEE5572009A8544 /* Symptom.m in Sources */ = {isa = PBXBuildFile; fileRef = A725AB111BEE5572009A8544 /* Symptom.m */; settings = {ASSET_TAGS = (); }; };
+		A725AB1F1BEE5572009A8544 /* Event.m in Sources */ = {isa = PBXBuildFile; fileRef = A725AB151BEE5572009A8544 /* Event.m */; settings = {ASSET_TAGS = (); }; };
+		A725AB211BEE5572009A8544 /* Medication+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = A725AB181BEE5572009A8544 /* Medication+CoreDataProperties.m */; settings = {ASSET_TAGS = (); }; };
+		A725AB221BEE5572009A8544 /* Medication.m in Sources */ = {isa = PBXBuildFile; fileRef = A725AB1A1BEE5572009A8544 /* Medication.m */; settings = {ASSET_TAGS = (); }; };
+		A725AB251BEE6B46009A8544 /* Event+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = A725AB241BEE6B46009A8544 /* Event+CoreDataProperties.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,7 +83,6 @@
 
 /* Begin PBXFileReference section */
 		888E6F571BEE437400DBC93C /* File */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = File; sourceTree = "<group>"; };
-		888E6F5B1BEE437C00DBC93C /* File */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = File; sourceTree = "<group>"; };
 		888E6F5F1BEE438500DBC93C /* File */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = File; sourceTree = "<group>"; };
 		888F87891BEE3AE700D7B673 /* PanicAttack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PanicAttack.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		888F878D1BEE3AE700D7B673 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -98,6 +105,28 @@
 		888F87C01BEE3BEE00D7B673 /* GlanceController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GlanceController.m; sourceTree = "<group>"; };
 		888F87C21BEE3BEE00D7B673 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		888F87C41BEE3BEE00D7B673 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A725AAD51BEE4E2C009A8544 /* CoreDataHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataHandler.h; sourceTree = "<group>"; };
+		A725AAD61BEE4E2C009A8544 /* CoreDataHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataHandler.m; sourceTree = "<group>"; };
+		A725AADB1BEE51C3009A8544 /* UserProfile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserProfile.h; sourceTree = "<group>"; };
+		A725AADC1BEE51C3009A8544 /* UserProfile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserProfile.m; sourceTree = "<group>"; };
+		A725AADE1BEE5250009A8544 /* DataHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataHandler.h; sourceTree = "<group>"; };
+		A725AADF1BEE5250009A8544 /* DataHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataHandler.m; sourceTree = "<group>"; };
+		A725AB0B1BEE5572009A8544 /* User+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "User+CoreDataProperties.m"; sourceTree = "<group>"; };
+		A725AB0C1BEE5572009A8544 /* User+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "User+CoreDataProperties.h"; sourceTree = "<group>"; };
+		A725AB0D1BEE5572009A8544 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		A725AB0E1BEE5572009A8544 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		A725AB0F1BEE5572009A8544 /* Symptom+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Symptom+CoreDataProperties.m"; sourceTree = "<group>"; };
+		A725AB101BEE5572009A8544 /* Symptom+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Symptom+CoreDataProperties.h"; sourceTree = "<group>"; };
+		A725AB111BEE5572009A8544 /* Symptom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Symptom.m; sourceTree = "<group>"; };
+		A725AB121BEE5572009A8544 /* Symptom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Symptom.h; sourceTree = "<group>"; };
+		A725AB131BEE5572009A8544 /* Medication+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Medication+CoreDataProperties.h"; sourceTree = "<group>"; };
+		A725AB151BEE5572009A8544 /* Event.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Event.m; sourceTree = "<group>"; };
+		A725AB161BEE5572009A8544 /* Event.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Event.h; sourceTree = "<group>"; };
+		A725AB181BEE5572009A8544 /* Medication+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Medication+CoreDataProperties.m"; sourceTree = "<group>"; };
+		A725AB191BEE5572009A8544 /* Medication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Medication.h; sourceTree = "<group>"; };
+		A725AB1A1BEE5572009A8544 /* Medication.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Medication.m; sourceTree = "<group>"; };
+		A725AB231BEE6B46009A8544 /* Event+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Event+CoreDataProperties.h"; sourceTree = "<group>"; };
+		A725AB241BEE6B46009A8544 /* Event+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Event+CoreDataProperties.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -207,7 +236,13 @@
 		888F87D51BEE3F8B00D7B673 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				888E6F5B1BEE437C00DBC93C /* File */,
+				A725AABC1BEE4D56009A8544 /* DataObjects */,
+				A725AAD51BEE4E2C009A8544 /* CoreDataHandler.h */,
+				A725AAD61BEE4E2C009A8544 /* CoreDataHandler.m */,
+				A725AADB1BEE51C3009A8544 /* UserProfile.h */,
+				A725AADC1BEE51C3009A8544 /* UserProfile.m */,
+				A725AADE1BEE5250009A8544 /* DataHandler.h */,
+				A725AADF1BEE5250009A8544 /* DataHandler.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -218,6 +253,29 @@
 				888E6F5F1BEE438500DBC93C /* File */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		A725AABC1BEE4D56009A8544 /* DataObjects */ = {
+			isa = PBXGroup;
+			children = (
+				A725AB0B1BEE5572009A8544 /* User+CoreDataProperties.m */,
+				A725AB0C1BEE5572009A8544 /* User+CoreDataProperties.h */,
+				A725AB0D1BEE5572009A8544 /* User.m */,
+				A725AB0E1BEE5572009A8544 /* User.h */,
+				A725AB0F1BEE5572009A8544 /* Symptom+CoreDataProperties.m */,
+				A725AB101BEE5572009A8544 /* Symptom+CoreDataProperties.h */,
+				A725AB111BEE5572009A8544 /* Symptom.m */,
+				A725AB121BEE5572009A8544 /* Symptom.h */,
+				A725AB231BEE6B46009A8544 /* Event+CoreDataProperties.h */,
+				A725AB241BEE6B46009A8544 /* Event+CoreDataProperties.m */,
+				A725AB151BEE5572009A8544 /* Event.m */,
+				A725AB161BEE5572009A8544 /* Event.h */,
+				A725AB131BEE5572009A8544 /* Medication+CoreDataProperties.h */,
+				A725AB181BEE5572009A8544 /* Medication+CoreDataProperties.m */,
+				A725AB191BEE5572009A8544 /* Medication.h */,
+				A725AB1A1BEE5572009A8544 /* Medication.m */,
+			);
+			path = DataObjects;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -321,7 +379,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				888E6F5C1BEE437C00DBC93C /* File in Resources */,
 				888F879F1BEE3AE700D7B673 /* LaunchScreen.storyboard in Resources */,
 				888F879C1BEE3AE700D7B673 /* Assets.xcassets in Resources */,
 				888E6F581BEE437400DBC93C /* File in Resources */,
@@ -333,7 +390,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				888E6F5D1BEE437C00DBC93C /* File in Resources */,
 				888F87AE1BEE3BEE00D7B673 /* Assets.xcassets in Resources */,
 				888F87AC1BEE3BEE00D7B673 /* Interface.storyboard in Resources */,
 				888E6F591BEE437400DBC93C /* File in Resources */,
@@ -348,7 +404,6 @@
 				888E6F621BEE438500DBC93C /* File in Resources */,
 				888E6F5A1BEE437400DBC93C /* File in Resources */,
 				888F87C31BEE3BEE00D7B673 /* Assets.xcassets in Resources */,
-				888E6F5E1BEE437C00DBC93C /* File in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -359,9 +414,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A725AB1F1BEE5572009A8544 /* Event.m in Sources */,
+				A725AB1C1BEE5572009A8544 /* User.m in Sources */,
+				A725AB1B1BEE5572009A8544 /* User+CoreDataProperties.m in Sources */,
+				A725AAD71BEE4E2C009A8544 /* CoreDataHandler.m in Sources */,
 				888F87911BEE3AE700D7B673 /* AppDelegate.m in Sources */,
+				A725AB221BEE5572009A8544 /* Medication.m in Sources */,
 				888F878E1BEE3AE700D7B673 /* main.m in Sources */,
+				A725AB1D1BEE5572009A8544 /* Symptom+CoreDataProperties.m in Sources */,
+				A725AAE01BEE5250009A8544 /* DataHandler.m in Sources */,
+				A725AB1E1BEE5572009A8544 /* Symptom.m in Sources */,
+				A725AB251BEE6B46009A8544 /* Event+CoreDataProperties.m in Sources */,
+				A725AADD1BEE51C3009A8544 /* UserProfile.m in Sources */,
 				888F879A1BEE3AE700D7B673 /* PanicAttack.xcdatamodeld in Sources */,
+				A725AB211BEE5572009A8544 /* Medication+CoreDataProperties.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
