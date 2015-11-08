@@ -90,12 +90,32 @@
     self.heartRate.hidden = !self.inProgress;
     self.heartRateImageVIew.image = [UIImage imageNamed:@"heart"];
     
+    //Animate heart image
+    CABasicAnimation *fadeAnimation = [CABasicAnimation animationWithKeyPath:@"opacity"];
+    fadeAnimation.duration = 1.0;
+    fadeAnimation.repeatCount = HUGE_VALF;
+    fadeAnimation.autoreverses = YES;
+    fadeAnimation.fromValue = [NSNumber numberWithFloat:1.0];
+    fadeAnimation.toValue = [NSNumber numberWithFloat:0.2];
+    [self.heartRateImageVIew.layer addAnimation:fadeAnimation forKey:@"animateOpacity"];
+    
+    CABasicAnimation *scaleAnimation = [CABasicAnimation animationWithKeyPath:@"transform.scale"];
+    scaleAnimation.duration = 1.0;
+    scaleAnimation.repeatCount = HUGE_VALF;
+    scaleAnimation.autoreverses = YES;
+    scaleAnimation.fromValue = @(1.0);
+    scaleAnimation.toValue = @(1.3);
+    [self.heartRateImageVIew.layer addAnimation:scaleAnimation forKey:@"animateScale"];
+    
     [self starTimer];
 }
 
 - (void) stopPanicEvent {
     [self stopTimer];
     self.stopDate = [NSDate date];
+    
+    //stop animating heart image
+    [self.heartRateImageVIew.layer removeAllAnimations];
     
     [self navigateToEvent];
 }
