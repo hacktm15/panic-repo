@@ -10,15 +10,18 @@
             <objects>
                 <controller id="AgC-eL-Hgc" customClass="InterfaceController">
                     <items>
-                        <button width="1" alignment="center" title="Panic" id="mlj-pY-bBe">
+                        <label alignment="center" text="Monitor a new Panic Attack" textAlignment="center" numberOfLines="3" id="BB8-NE-tYd"/>
+                        <button width="1" alignment="center" verticalAlignment="center" title="Start monitoring" id="mlj-pY-bBe">
                             <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <action selector="panicButtonAction" destination="AgC-eL-Hgc" id="qKz-ZT-mvc"/>
                             </connections>
                         </button>
+                        <timer alignment="center" verticalAlignment="bottom" enabled="YES" format="abbreviated" id="9Rc-jV-m4w"/>
                     </items>
                     <connections>
                         <outlet property="panicButton" destination="mlj-pY-bBe" id="9J1-UZ-lLQ"/>
+                        <outlet property="timer" destination="9Rc-jV-m4w" id="JeW-Z3-hx8"/>
                     </connections>
                 </controller>
             </objects>
@@ -30,7 +33,11 @@
                 <glanceController spacing="0.0" id="Sv0-Ai-Zie" customClass="GlanceController">
                     <items>
                         <group alignment="left" id="gv7-I2-MZq"/>
-                        <group alignment="left" id="eew-Gs-W6Y"/>
+                        <group alignment="left" id="eew-Gs-W6Y">
+                            <items>
+                                <label alignment="center" verticalAlignment="center" text="Start application" id="bZt-iG-Mdi"/>
+                            </items>
+                        </group>
                     </items>
                     <edgeInsets key="margins" left="0.0" right="0.0" top="0.0" bottom="14"/>
                 </glanceController>
