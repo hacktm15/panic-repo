@@ -147,6 +147,7 @@ typedef NS_ENUM (NSUInteger, PanicButtonState) {
 - (void) stopTimer {
     [self.timer stop];
     [self.timer setHidden: YES];
+    _healthStore = nil;
 }
 
 - (NSDictionary *) panicButtonTitles {
