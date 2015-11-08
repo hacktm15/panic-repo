@@ -25,7 +25,18 @@
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="164" y="217"/>
+            <point key="canvasLocation" x="-100" y="154"/>
+        </scene>
+        <!--error-->
+        <scene sceneID="jmg-iN-Uuj">
+            <objects>
+                <controller identifier="error" id="znl-bc-49U">
+                    <items>
+                        <label alignment="center" verticalAlignment="center" text="Communication error" textAlignment="center" numberOfLines="2" id="K7z-2S-EUU"/>
+                    </items>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="111" y="156"/>
         </scene>
         <!--Glance Interface Controller-->
         <scene sceneID="rjY-Ar-IMT">
