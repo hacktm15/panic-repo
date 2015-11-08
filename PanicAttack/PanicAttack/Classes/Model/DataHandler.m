@@ -17,8 +17,8 @@
 
 @implementation DataHandler
 
-- (User *)createUserWithEmail:(NSString *)email {
-    User *user = [User object];
+- (Patient *)createUserWithEmail:(NSString *)email {
+    Patient *user = [Patient object];
     user.email = email;
     [user saveInBackground];
     
@@ -26,7 +26,7 @@
 }
 
 - (void)fetchUserWithEmail:(NSString *)email completionBlock:(PFQueryArrayResultBlock)completion {
-    PFQuery *query = [PFQuery queryWithClassName:[User parseClassName]];
+    PFQuery *query = [PFQuery queryWithClassName:[Patient parseClassName]];
     [query findObjectsInBackgroundWithBlock:completion];
 }
 

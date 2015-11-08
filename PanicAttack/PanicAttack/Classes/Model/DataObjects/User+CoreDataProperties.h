@@ -9,11 +9,11 @@
 //  to delete and recreate this implementation file for your updated model.
 //
 
-#import "User.h"
+#import "Patient.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface User (CoreDataProperties)
+@interface Patient (CoreDataProperties)
 
 @property (nullable, nonatomic, retain) NSString *firstName;
 @property (nullable, nonatomic, retain) NSString *lastName;
@@ -22,7 +22,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nullable, nonatomic, retain) NSNumber *weight;
 @property (nullable, nonatomic, retain) NSDate *birthDate;
 @property (nullable, nonatomic, retain) NSString *email;
-@property (nullable, nonatomic, retain) NSSet<Event *> *events;
+@property (nullable, nonatomic, retain) NSArray<Event *> *events;
 
 @end
 

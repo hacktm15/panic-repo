@@ -9,7 +9,7 @@
 #import "Event.h"
 #import "Medication.h"
 #import "Symptom.h"
-#import "User.h"
+#import "Patient.h"
 
 @implementation Event
 

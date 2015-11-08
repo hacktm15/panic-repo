@@ -9,9 +9,12 @@
 #import "AppDelegate.h"
 #import "PanicViewController.h"
 #import "HistoryViewController.h"
+#import "ProfileViewController.h"
 #import "UserProfile.h"
 #import <Parse/Parse.h>
 #import <WatchConnectivity/WatchConnectivity.h>
+#import <HealthKit/HealthKit.h>
+#import "HKHealthStore+AAPLExtensions.h"
 
 static NSString *kPanicButtonKey = @"panicButtonKey";
 
@@ -23,6 +26,8 @@ typedef NS_ENUM (NSUInteger, PanicButtonState) {
 
 @interface AppDelegate () <WCSessionDelegate>
 
+@property (nonatomic) HKHealthStore *healthStore;
+
 @end
 
 @implementation AppDelegate
@@ -30,9 +35,16 @@ typedef NS_ENUM (NSUInteger, PanicButtonState) {
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     [self setupParse];
     
-    [[UserProfile sharedInstance].dataHandler fetchUserWithEmail:@"user@email.com" completionBlock:^(NSArray<User *> * _Nullable objects, NSError * _Nullable error) {
+    self.healthStore = [HKHealthStore new];
+    
+    [[UserProfile sharedInstance].dataHandler fetchUserWithEmail:@"user@email.com" completionBlock:^(NSArray<Patient *> * _Nullable objects, NSError * _Nullable error) {
         if (objects.count == 0) {
             [self createDummyData];
+        } else {
+            [UserProfile sharedInstance].user = [objects firstObject]; // LOGIN
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"UserUpdated" object:nil];
+            
+            [self readHealthKitData];
         }
     }];
     
@@ -53,11 +65,13 @@ typedef NS_ENUM (NSUInteger, PanicButtonState) {
 }
 
 - (NSArray *) tabViewControllers {
+    ProfileViewController *profileVC = [ProfileViewController new];
+    
     PanicViewController *panicVC = [[PanicViewController alloc] initWithNibName: @"PanicViewController" bundle: nil];
     
     HistoryViewController *historyVC = [[HistoryViewController alloc] initWithNibName: @"HistoryViewController" bundle: nil];
     
-    return @[panicVC, historyVC];
+    return @[profileVC, panicVC, historyVC];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {
@@ -74,6 +88,7 @@ typedef NS_ENUM (NSUInteger, PanicButtonState) {
     // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
 
     [self establishSession];
+    [self readHealthKitData];
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
@@ -88,7 +103,7 @@ typedef NS_ENUM (NSUInteger, PanicButtonState) {
 #pragma mark - Private
 
 - (void)setupParse {
-    [User registerSubclass];
+    [Patient registerSubclass];
     [Symptom registerSubclass];
     [Event registerSubclass];
     [Medication registerSubclass];
@@ -97,13 +112,19 @@ typedef NS_ENUM (NSUInteger, PanicButtonState) {
 }
 
 - (void)createDummyData {
-    User *user = [[UserProfile sharedInstance].dataHandler createUserWithEmail:@"user@email.com"];
+    Patient *user = [[UserProfile sharedInstance].dataHandler createUserWithEmail:@"user@email.com"];
+    user.firstName = @"Vlad";
+    user.lastName = @"Dracul";
+    user.sex = @0;
+    user.birthDate = [NSDate dateWithTimeIntervalSince1970:0];
+    user.weight = @89;
     
-    Event *event = [[UserProfile sharedInstance].dataHandler createEventWithStartDate:[NSDate date]];
-    event.user = user;
-    [event saveInBackground];
+    [UserProfile sharedInstance].user = user; // LOGIN
     
-    event = [[UserProfile sharedInstance].dataHandler createEventWithStartDate:[NSDate dateWithTimeIntervalSinceNow:-518400]];
+    Event *event1 = [[UserProfile sharedInstance].dataHandler createEventWithStartDate:[NSDate date]];
+    event1.user = user;
+    
+    Event *event = [[UserProfile sharedInstance].dataHandler createEventWithStartDate:[NSDate dateWithTimeIntervalSinceNow:-518400]];
     event.user = user;
     event.anxietyLevel = @(5);
     event.depressionLevel = @(10);
@@ -118,6 +139,8 @@ typedef NS_ENUM (NSUInteger, PanicButtonState) {
     NSArray *symptoms = @[[[UserProfile sharedInstance].dataHandler createSymptomWithName:@"symptom one"],[[UserProfile sharedInstance].dataHandler createSymptomWithName:@"symptom two"], [[UserProfile sharedInstance].dataHandler createSymptomWithName:@"three"]];
     event.symptoms = symptoms;
     
+    [user saveInBackground];
+    [event1 saveInBackground];
     [event saveInBackground];
 }
 
@@ -133,6 +156,85 @@ typedef NS_ENUM (NSUInteger, PanicButtonState) {
 - (void) session: (WCSession *) session didReceiveMessage: (NSDictionary <NSString *, id> *) message replyHandler: (void (^)(NSDictionary <NSString *, id> *_Nonnull)) replyHandler {
     replyHandler(@{kPanicButtonKey : @(StopPanicEvent)});
 
+}
+
+#pragma mark - HealthKit
+
+- (NSSet *)dataTypesToRead {
+    HKQuantityType *weightType = [HKObjectType quantityTypeForIdentifier:HKQuantityTypeIdentifierBodyMass];
+    HKCharacteristicType *birthdayType = [HKObjectType characteristicTypeForIdentifier:HKCharacteristicTypeIdentifierDateOfBirth];
+    HKCharacteristicType *biologicalSexType = [HKObjectType characteristicTypeForIdentifier:HKCharacteristicTypeIdentifierBiologicalSex];
+    
+    return [NSSet setWithObjects:weightType, birthdayType, biologicalSexType, nil];
+}
+
+- (void)readHealthKitData {
+    if ([HKHealthStore isHealthDataAvailable]) {
+        NSSet *readDataTypes = [self dataTypesToRead];
+        
+        [self.healthStore requestAuthorizationToShareTypes:nil readTypes:readDataTypes completion:^(BOOL success, NSError *error) {
+            if (!success) {
+                NSLog(@"You didn't allow HealthKit to access these read/write data types. In your app, try to handle this error gracefully when a user decides not to provide access. The error was: %@. If you're using a simulator, try it on a device.", error);
+                
+                return;
+            }
+            
+            dispatch_async(dispatch_get_main_queue(), ^{
+                NSDate *dateOfBirth = [self.healthStore dateOfBirthWithError:nil];
+                [UserProfile sharedInstance].user.birthDate = dateOfBirth;
+                [[UserProfile sharedInstance].user saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        [[NSNotificationCenter defaultCenter] postNotificationName:@"UserUpdated" object:nil];
+                    });
+                }];
+                
+                HKBiologicalSexObject *biologicalSexObject = [self.healthStore biologicalSexWithError:nil];
+                if (biologicalSexObject) {
+                    if (biologicalSexObject.biologicalSex == HKBiologicalSexMale) {
+                        [UserProfile sharedInstance].user.sex = @0;
+                    } else if (biologicalSexObject.biologicalSex == HKBiologicalSexFemale) {
+                        [UserProfile sharedInstance].user.sex = @1;
+                    } else {
+                        [UserProfile sharedInstance].user.sex = nil;
+                    }
+                    
+                    [[UserProfile sharedInstance].user saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
+                        dispatch_async(dispatch_get_main_queue(), ^{
+                            [[NSNotificationCenter defaultCenter] postNotificationName:@"UserUpdated" object:nil];
+                        });
+                    }];
+                }
+            });
+            
+            HKQuantityType *weightType = [HKQuantityType quantityTypeForIdentifier:HKQuantityTypeIdentifierBodyMass];
+            [self.healthStore aapl_mostRecentQuantitySampleOfType:weightType predicate:nil completion:^(HKQuantity *mostRecentQuantity, NSError *error) {
+                if (mostRecentQuantity) {
+                    // Determine the weight in the required unit.
+                    HKUnit *weightUnit = [HKUnit gramUnit];
+                    double usersWeight = [mostRecentQuantity doubleValueForUnit:weightUnit] / 1000;
+                    
+                    // Update the user interface.
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        [UserProfile sharedInstance].user.weight = @(usersWeight);
+                        [[UserProfile sharedInstance].user saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
+                            dispatch_async(dispatch_get_main_queue(), ^{
+                                [[NSNotificationCenter defaultCenter] postNotificationName:@"UserUpdated" object:nil];
+                            });
+                        }];
+                    });
+                } else {
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        [UserProfile sharedInstance].user.weight = nil;
+                        [[UserProfile sharedInstance].user saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
+                            dispatch_async(dispatch_get_main_queue(), ^{
+                                [[NSNotificationCenter defaultCenter] postNotificationName:@"UserUpdated" object:nil];
+                            });
+                        }];
+                    });
+                }
+            }];
+        }];
+    }
 }
 
 @end

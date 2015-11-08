@@ -6,13 +6,13 @@
 //  Copyright © 2015 PanicTeam. All rights reserved.
 //
 
-#import "User.h"
+#import "Patient.h"
 #import "Event.h"
 
-@implementation User
+@implementation Patient
 
 + (NSString *)parseClassName {
-    return @"User";
+    return @"Patient";
 }
 
 @end

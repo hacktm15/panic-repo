@@ -11,7 +11,7 @@
 
 #import "User+CoreDataProperties.h"
 
-@implementation User (CoreDataProperties)
+@implementation Patient (CoreDataProperties)
 
 @dynamic firstName;
 @dynamic lastName;
