@@ -9,6 +9,9 @@
 #import "PanicViewController.h"
 #import "DataHandler.h"
 #import "AppDelegate.h"
+#import "PanicEventViewController.h"
+#import "UserProfile.h"
+#import "Event.h"
 
 @interface PanicViewController ()
 
@@ -17,6 +20,7 @@
 
 @property (nonatomic) BOOL inProgress;
 @property (nonatomic) NSDate *startDate;
+@property (nonatomic) NSDate *stopDate;
 @property (nonatomic) NSTimer *timer;
 
 @end
@@ -70,6 +74,9 @@
 
 - (void) stopPanicEvent {
     [self stopTimer];
+    self.stopDate = [NSDate date];
+    
+    [self navigateToEvent];
 }
 
 - (void) starTimer {
@@ -85,6 +92,18 @@
 
 - (void) tick: (NSTimer *) timer {
     self.timerLabel.text = [self formatedTime];
+}
+
+- (void)navigateToEvent {
+#warning CONVERT DATE TO SYSTEM TIMEZONE
+    Event *newEvent = [[UserProfile sharedInstance].dataHandler createEventWithStartDate: self.startDate];
+    PanicEventViewController *panicEventVC = [[PanicEventViewController alloc] initWithEvent: newEvent];
+    [self.navigationController pushViewController: panicEventVC animated: YES];
+    
+//    [[UserProfile sharedInstance].dataHandler fetchEventsWithCompletionBlock:^(NSArray<Event *> * _Nullable objects, NSError * _Nullable error) {
+//        PanicEventViewController *panicEventVC = [[PanicEventViewController alloc] initWithEvent: [objects firstObject]];
+//        [self.navigationController pushViewController: panicEventVC animated: YES];
+//    }];
 }
 
 #pragma mark - Public

@@ -9,16 +9,18 @@
 /* Begin PBXBuildFile section */
 		2955F0981BEE57AF00648BB4 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2955F0971BEE57AF00648BB4 /* HealthKit.framework */; };
 		2955F09A1BEE59D400648BB4 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2955F0991BEE59D400648BB4 /* HealthKit.framework */; };
+		885AF13F1BEEDF6D00E6884E /* ScaleTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 885AF13D1BEEDF6D00E6884E /* ScaleTableViewCell.m */; };
+		885AF1401BEEDF6D00E6884E /* ScaleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 885AF13E1BEEDF6D00E6884E /* ScaleTableViewCell.xib */; };
+		885AF1491BEEECDC00E6884E /* TextInputViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 885AF1471BEEECDC00E6884E /* TextInputViewController.m */; };
+		885AF14A1BEEECDC00E6884E /* TextInputViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 885AF1481BEEECDC00E6884E /* TextInputViewController.xib */; };
 		888523781BEE5CFA003AE390 /* PanicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 888523761BEE5CFA003AE390 /* PanicViewController.m */; };
 		888523791BEE5CFA003AE390 /* PanicViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 888523771BEE5CFA003AE390 /* PanicViewController.xib */; };
 		8885237D1BEE5F82003AE390 /* HistoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8885237B1BEE5F82003AE390 /* HistoryViewController.m */; };
 		8885237E1BEE5F82003AE390 /* HistoryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8885237C1BEE5F82003AE390 /* HistoryViewController.xib */; };
-		888E6F581BEE437400DBC93C /* File in Resources */ = {isa = PBXBuildFile; fileRef = 888E6F571BEE437400DBC93C /* File */; };
-		888E6F591BEE437400DBC93C /* File in Resources */ = {isa = PBXBuildFile; fileRef = 888E6F571BEE437400DBC93C /* File */; };
-		888E6F5A1BEE437400DBC93C /* File in Resources */ = {isa = PBXBuildFile; fileRef = 888E6F571BEE437400DBC93C /* File */; };
-		888E6F601BEE438500DBC93C /* File in Resources */ = {isa = PBXBuildFile; fileRef = 888E6F5F1BEE438500DBC93C /* File */; };
-		888E6F611BEE438500DBC93C /* File in Resources */ = {isa = PBXBuildFile; fileRef = 888E6F5F1BEE438500DBC93C /* File */; };
-		888E6F621BEE438500DBC93C /* File in Resources */ = {isa = PBXBuildFile; fileRef = 888E6F5F1BEE438500DBC93C /* File */; };
+		888523821BEE9F3E003AE390 /* PanicEventViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 888523801BEE9F3E003AE390 /* PanicEventViewController.m */; };
+		888523831BEE9F3E003AE390 /* PanicEventViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 888523811BEE9F3E003AE390 /* PanicEventViewController.xib */; };
+		888523861BEEB0D3003AE390 /* StaticTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 888523851BEEB0D3003AE390 /* StaticTableViewCell.m */; };
+		888523881BEEC9BF003AE390 /* StaticTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 888523871BEEC9BF003AE390 /* StaticTableViewCell.xib */; };
 		888F878E1BEE3AE700D7B673 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 888F878D1BEE3AE700D7B673 /* main.m */; };
 		888F87911BEE3AE700D7B673 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 888F87901BEE3AE700D7B673 /* AppDelegate.m */; };
 		888F879A1BEE3AE700D7B673 /* PanicAttack.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 888F87981BEE3AE700D7B673 /* PanicAttack.xcdatamodeld */; };
@@ -32,24 +34,24 @@
 		888F87C11BEE3BEE00D7B673 /* GlanceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 888F87C01BEE3BEE00D7B673 /* GlanceController.m */; };
 		888F87C31BEE3BEE00D7B673 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 888F87C21BEE3BEE00D7B673 /* Assets.xcassets */; };
 		888F87C71BEE3BEE00D7B673 /* PanicAttack Watch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 888F87A81BEE3BEE00D7B673 /* PanicAttack Watch.app */; };
-		A725AAD71BEE4E2C009A8544 /* CoreDataHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = A725AAD61BEE4E2C009A8544 /* CoreDataHandler.m */; settings = {ASSET_TAGS = (); }; };
-		A725AADD1BEE51C3009A8544 /* UserProfile.m in Sources */ = {isa = PBXBuildFile; fileRef = A725AADC1BEE51C3009A8544 /* UserProfile.m */; settings = {ASSET_TAGS = (); }; };
-		A725AAE01BEE5250009A8544 /* DataHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = A725AADF1BEE5250009A8544 /* DataHandler.m */; settings = {ASSET_TAGS = (); }; };
-		A725AB1B1BEE5572009A8544 /* User+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = A725AB0B1BEE5572009A8544 /* User+CoreDataProperties.m */; settings = {ASSET_TAGS = (); }; };
-		A725AB1C1BEE5572009A8544 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = A725AB0D1BEE5572009A8544 /* User.m */; settings = {ASSET_TAGS = (); }; };
-		A725AB1D1BEE5572009A8544 /* Symptom+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = A725AB0F1BEE5572009A8544 /* Symptom+CoreDataProperties.m */; settings = {ASSET_TAGS = (); }; };
-		A725AB1E1BEE5572009A8544 /* Symptom.m in Sources */ = {isa = PBXBuildFile; fileRef = A725AB111BEE5572009A8544 /* Symptom.m */; settings = {ASSET_TAGS = (); }; };
-		A725AB1F1BEE5572009A8544 /* Event.m in Sources */ = {isa = PBXBuildFile; fileRef = A725AB151BEE5572009A8544 /* Event.m */; settings = {ASSET_TAGS = (); }; };
-		A725AB211BEE5572009A8544 /* Medication+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = A725AB181BEE5572009A8544 /* Medication+CoreDataProperties.m */; settings = {ASSET_TAGS = (); }; };
-		A725AB221BEE5572009A8544 /* Medication.m in Sources */ = {isa = PBXBuildFile; fileRef = A725AB1A1BEE5572009A8544 /* Medication.m */; settings = {ASSET_TAGS = (); }; };
-		A725AB251BEE6B46009A8544 /* Event+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = A725AB241BEE6B46009A8544 /* Event+CoreDataProperties.m */; settings = {ASSET_TAGS = (); }; };
-		A725AB2D1BEE6F79009A8544 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A725AB261BEE6F79009A8544 /* Bolts.framework */; settings = {ASSET_TAGS = (); }; };
-		A725AB2E1BEE6F79009A8544 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A725AB271BEE6F79009A8544 /* Parse.framework */; settings = {ASSET_TAGS = (); }; };
-		A725AB2F1BEE6F79009A8544 /* ParseCrashReporting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A725AB281BEE6F79009A8544 /* ParseCrashReporting.framework */; settings = {ASSET_TAGS = (); }; };
-		A725AB301BEE6F79009A8544 /* ParseFacebookUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A725AB291BEE6F79009A8544 /* ParseFacebookUtils.framework */; settings = {ASSET_TAGS = (); }; };
-		A725AB311BEE6F79009A8544 /* ParseFacebookUtilsV4.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A725AB2A1BEE6F79009A8544 /* ParseFacebookUtilsV4.framework */; settings = {ASSET_TAGS = (); }; };
-		A725AB321BEE6F79009A8544 /* ParseTwitterUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A725AB2B1BEE6F79009A8544 /* ParseTwitterUtils.framework */; settings = {ASSET_TAGS = (); }; };
-		A725AB331BEE6F79009A8544 /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A725AB2C1BEE6F79009A8544 /* ParseUI.framework */; settings = {ASSET_TAGS = (); }; };
+		A725AAD71BEE4E2C009A8544 /* CoreDataHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = A725AAD61BEE4E2C009A8544 /* CoreDataHandler.m */; };
+		A725AADD1BEE51C3009A8544 /* UserProfile.m in Sources */ = {isa = PBXBuildFile; fileRef = A725AADC1BEE51C3009A8544 /* UserProfile.m */; };
+		A725AAE01BEE5250009A8544 /* DataHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = A725AADF1BEE5250009A8544 /* DataHandler.m */; };
+		A725AB1B1BEE5572009A8544 /* User+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = A725AB0B1BEE5572009A8544 /* User+CoreDataProperties.m */; };
+		A725AB1C1BEE5572009A8544 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = A725AB0D1BEE5572009A8544 /* User.m */; };
+		A725AB1D1BEE5572009A8544 /* Symptom+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = A725AB0F1BEE5572009A8544 /* Symptom+CoreDataProperties.m */; };
+		A725AB1E1BEE5572009A8544 /* Symptom.m in Sources */ = {isa = PBXBuildFile; fileRef = A725AB111BEE5572009A8544 /* Symptom.m */; };
+		A725AB1F1BEE5572009A8544 /* Event.m in Sources */ = {isa = PBXBuildFile; fileRef = A725AB151BEE5572009A8544 /* Event.m */; };
+		A725AB211BEE5572009A8544 /* Medication+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = A725AB181BEE5572009A8544 /* Medication+CoreDataProperties.m */; };
+		A725AB221BEE5572009A8544 /* Medication.m in Sources */ = {isa = PBXBuildFile; fileRef = A725AB1A1BEE5572009A8544 /* Medication.m */; };
+		A725AB251BEE6B46009A8544 /* Event+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = A725AB241BEE6B46009A8544 /* Event+CoreDataProperties.m */; };
+		A725AB2D1BEE6F79009A8544 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A725AB261BEE6F79009A8544 /* Bolts.framework */; };
+		A725AB2E1BEE6F79009A8544 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A725AB271BEE6F79009A8544 /* Parse.framework */; };
+		A725AB2F1BEE6F79009A8544 /* ParseCrashReporting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A725AB281BEE6F79009A8544 /* ParseCrashReporting.framework */; };
+		A725AB301BEE6F79009A8544 /* ParseFacebookUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A725AB291BEE6F79009A8544 /* ParseFacebookUtils.framework */; };
+		A725AB311BEE6F79009A8544 /* ParseFacebookUtilsV4.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A725AB2A1BEE6F79009A8544 /* ParseFacebookUtilsV4.framework */; };
+		A725AB321BEE6F79009A8544 /* ParseTwitterUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A725AB2B1BEE6F79009A8544 /* ParseTwitterUtils.framework */; };
+		A725AB331BEE6F79009A8544 /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A725AB2C1BEE6F79009A8544 /* ParseUI.framework */; };
 		A725AB351BEE810E009A8544 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A725AB341BEE810E009A8544 /* AudioToolbox.framework */; };
 		A725AB371BEE811A009A8544 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A725AB361BEE811A009A8544 /* CFNetwork.framework */; };
 		A725AB391BEE8120009A8544 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A725AB381BEE8120009A8544 /* CoreGraphics.framework */; };
@@ -110,14 +112,25 @@
 		29240CDC1BEE4AB100B0DD7E /* PanicAttack Watch Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "PanicAttack Watch Extension.entitlements"; sourceTree = "<group>"; };
 		2955F0971BEE57AF00648BB4 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS2.0.sdk/System/Library/Frameworks/HealthKit.framework; sourceTree = DEVELOPER_DIR; };
 		2955F0991BEE59D400648BB4 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
+		885AF13C1BEEDF6D00E6884E /* ScaleTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScaleTableViewCell.h; sourceTree = "<group>"; };
+		885AF13D1BEEDF6D00E6884E /* ScaleTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScaleTableViewCell.m; sourceTree = "<group>"; };
+		885AF13E1BEEDF6D00E6884E /* ScaleTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ScaleTableViewCell.xib; sourceTree = "<group>"; };
+		885AF1451BEEE5DE00E6884E /* ScaleTableViewCellProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScaleTableViewCellProtocol.h; sourceTree = "<group>"; };
+		885AF1461BEEECDC00E6884E /* TextInputViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextInputViewController.h; sourceTree = "<group>"; };
+		885AF1471BEEECDC00E6884E /* TextInputViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextInputViewController.m; sourceTree = "<group>"; };
+		885AF1481BEEECDC00E6884E /* TextInputViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TextInputViewController.xib; sourceTree = "<group>"; };
 		888523751BEE5CFA003AE390 /* PanicViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PanicViewController.h; sourceTree = "<group>"; };
 		888523761BEE5CFA003AE390 /* PanicViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PanicViewController.m; sourceTree = "<group>"; };
 		888523771BEE5CFA003AE390 /* PanicViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PanicViewController.xib; sourceTree = "<group>"; };
 		8885237A1BEE5F82003AE390 /* HistoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HistoryViewController.h; sourceTree = "<group>"; };
 		8885237B1BEE5F82003AE390 /* HistoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HistoryViewController.m; sourceTree = "<group>"; };
 		8885237C1BEE5F82003AE390 /* HistoryViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HistoryViewController.xib; sourceTree = "<group>"; };
-		888E6F571BEE437400DBC93C /* File */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = File; sourceTree = "<group>"; };
-		888E6F5F1BEE438500DBC93C /* File */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = File; sourceTree = "<group>"; };
+		8885237F1BEE9F3E003AE390 /* PanicEventViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PanicEventViewController.h; sourceTree = "<group>"; };
+		888523801BEE9F3E003AE390 /* PanicEventViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PanicEventViewController.m; sourceTree = "<group>"; };
+		888523811BEE9F3E003AE390 /* PanicEventViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PanicEventViewController.xib; sourceTree = "<group>"; };
+		888523841BEEB0D3003AE390 /* StaticTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StaticTableViewCell.h; sourceTree = "<group>"; };
+		888523851BEEB0D3003AE390 /* StaticTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StaticTableViewCell.m; sourceTree = "<group>"; };
+		888523871BEEC9BF003AE390 /* StaticTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StaticTableViewCell.xib; sourceTree = "<group>"; };
 		888F87891BEE3AE700D7B673 /* PanicAttack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PanicAttack.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		888F878D1BEE3AE700D7B673 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		888F878F1BEE3AE700D7B673 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -350,6 +363,12 @@
 				8885237A1BEE5F82003AE390 /* HistoryViewController.h */,
 				8885237B1BEE5F82003AE390 /* HistoryViewController.m */,
 				8885237C1BEE5F82003AE390 /* HistoryViewController.xib */,
+				8885237F1BEE9F3E003AE390 /* PanicEventViewController.h */,
+				888523801BEE9F3E003AE390 /* PanicEventViewController.m */,
+				888523811BEE9F3E003AE390 /* PanicEventViewController.xib */,
+				885AF1461BEEECDC00E6884E /* TextInputViewController.h */,
+				885AF1471BEEECDC00E6884E /* TextInputViewController.m */,
+				885AF1481BEEECDC00E6884E /* TextInputViewController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -371,7 +390,13 @@
 		888F87D61BEE3F8B00D7B673 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				888E6F5F1BEE438500DBC93C /* File */,
+				888523841BEEB0D3003AE390 /* StaticTableViewCell.h */,
+				888523851BEEB0D3003AE390 /* StaticTableViewCell.m */,
+				888523871BEEC9BF003AE390 /* StaticTableViewCell.xib */,
+				885AF13C1BEEDF6D00E6884E /* ScaleTableViewCell.h */,
+				885AF13D1BEEDF6D00E6884E /* ScaleTableViewCell.m */,
+				885AF13E1BEEDF6D00E6884E /* ScaleTableViewCell.xib */,
+				885AF1451BEEE5DE00E6884E /* ScaleTableViewCellProtocol.h */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -528,10 +553,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				888F879F1BEE3AE700D7B673 /* LaunchScreen.storyboard in Resources */,
+				888523831BEE9F3E003AE390 /* PanicEventViewController.xib in Resources */,
+				885AF1401BEEDF6D00E6884E /* ScaleTableViewCell.xib in Resources */,
 				888F879C1BEE3AE700D7B673 /* Assets.xcassets in Resources */,
 				888523791BEE5CFA003AE390 /* PanicViewController.xib in Resources */,
-				888E6F601BEE438500DBC93C /* File in Resources */,
+				885AF14A1BEEECDC00E6884E /* TextInputViewController.xib in Resources */,
 				8885237E1BEE5F82003AE390 /* HistoryViewController.xib in Resources */,
+				888523881BEEC9BF003AE390 /* StaticTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -541,7 +569,6 @@
 			files = (
 				888F87AE1BEE3BEE00D7B673 /* Assets.xcassets in Resources */,
 				888F87AC1BEE3BEE00D7B673 /* Interface.storyboard in Resources */,
-				888E6F611BEE438500DBC93C /* File in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -549,7 +576,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				888E6F621BEE438500DBC93C /* File in Resources */,
 				888F87C31BEE3BEE00D7B673 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -566,17 +592,21 @@
 				A725AB1B1BEE5572009A8544 /* User+CoreDataProperties.m in Sources */,
 				A725AAD71BEE4E2C009A8544 /* CoreDataHandler.m in Sources */,
 				888F87911BEE3AE700D7B673 /* AppDelegate.m in Sources */,
+				888523861BEEB0D3003AE390 /* StaticTableViewCell.m in Sources */,
 				A725AB221BEE5572009A8544 /* Medication.m in Sources */,
 				888F878E1BEE3AE700D7B673 /* main.m in Sources */,
+				885AF1491BEEECDC00E6884E /* TextInputViewController.m in Sources */,
 				888523781BEE5CFA003AE390 /* PanicViewController.m in Sources */,
 				8885237D1BEE5F82003AE390 /* HistoryViewController.m in Sources */,
 				A725AB1D1BEE5572009A8544 /* Symptom+CoreDataProperties.m in Sources */,
 				A725AAE01BEE5250009A8544 /* DataHandler.m in Sources */,
 				A725AB1E1BEE5572009A8544 /* Symptom.m in Sources */,
+				885AF13F1BEEDF6D00E6884E /* ScaleTableViewCell.m in Sources */,
 				A725AB251BEE6B46009A8544 /* Event+CoreDataProperties.m in Sources */,
 				A725AADD1BEE51C3009A8544 /* UserProfile.m in Sources */,
 				888F879A1BEE3AE700D7B673 /* PanicAttack.xcdatamodeld in Sources */,
 				A725AB211BEE5572009A8544 /* Medication+CoreDataProperties.m in Sources */,
+				888523821BEE9F3E003AE390 /* PanicEventViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
