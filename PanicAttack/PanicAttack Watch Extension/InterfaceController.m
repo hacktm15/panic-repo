@@ -39,16 +39,17 @@ typedef NS_ENUM (NSUInteger, PanicButtonState) {
 - (void)awakeWithContext:(id)context {
     [super awakeWithContext:context];
 
+}
+
+- (void)willActivate {
+    [super willActivate];
+
     self.panicButtonState = @(Waiting);
     [self.timer setHidden: NO];
 
     WCSession *session = [WCSession defaultSession];
     session.delegate = self;
     [session activateSession];
-}
-
-- (void)willActivate {
-    [super willActivate];
 
     [self handlePanicButtonState];
 }
@@ -59,6 +60,7 @@ typedef NS_ENUM (NSUInteger, PanicButtonState) {
 }
 
 - (void)session:(WCSession *)session didReceiveMessage:(NSDictionary<NSString *,id> *)message replyHandler:(void (^)(NSDictionary<NSString *,id> * _Nonnull))replyHandler {
+    [self.timer setDate: [message valueForKey: kTimerKey]];
     self.panicButtonState = [message valueForKey: kPanicButtonKey];
 }
 
