@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2907A88E1BEF557000DC4162 /* HKHealthStore+AAPLExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 2907A88D1BEF557000DC4162 /* HKHealthStore+AAPLExtensions.m */; };
 		2955F0981BEE57AF00648BB4 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2955F0971BEE57AF00648BB4 /* HealthKit.framework */; };
 		2955F09A1BEE59D400648BB4 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2955F0991BEE59D400648BB4 /* HealthKit.framework */; };
 		885AF13F1BEEDF6D00E6884E /* ScaleTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 885AF13D1BEEDF6D00E6884E /* ScaleTableViewCell.m */; };
@@ -112,6 +113,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		2907A88C1BEF557000DC4162 /* HKHealthStore+AAPLExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "HKHealthStore+AAPLExtensions.h"; sourceTree = "<group>"; };
+		2907A88D1BEF557000DC4162 /* HKHealthStore+AAPLExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "HKHealthStore+AAPLExtensions.m"; sourceTree = "<group>"; };
 		29240CD71BEE4A4200B0DD7E /* PanicAttack.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = PanicAttack.entitlements; sourceTree = "<group>"; };
 		29240CDB1BEE4A9900B0DD7E /* PanicAttack Watch.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "PanicAttack Watch.entitlements"; sourceTree = "<group>"; };
 		29240CDC1BEE4AB100B0DD7E /* PanicAttack Watch Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "PanicAttack Watch Extension.entitlements"; sourceTree = "<group>"; };
@@ -243,6 +246,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2907A88B1BEF557000DC4162 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				2907A88C1BEF557000DC4162 /* HKHealthStore+AAPLExtensions.h */,
+				2907A88D1BEF557000DC4162 /* HKHealthStore+AAPLExtensions.m */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		29240CDA1BEE4A6500B0DD7E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -360,6 +372,7 @@
 		888F87D31BEE3F8B00D7B673 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				2907A88B1BEF557000DC4162 /* Extensions */,
 				888F87D41BEE3F8B00D7B673 /* Controller */,
 				888F87D51BEE3F8B00D7B673 /* Model */,
 				888F87D61BEE3F8B00D7B673 /* View */,
@@ -610,6 +623,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2907A88E1BEF557000DC4162 /* HKHealthStore+AAPLExtensions.m in Sources */,
 				A725AB1F1BEE5572009A8544 /* Event.m in Sources */,
 				A725AB1C1BEE5572009A8544 /* Patient.m in Sources */,
 				A725AB1B1BEE5572009A8544 /* User+CoreDataProperties.m in Sources */,
