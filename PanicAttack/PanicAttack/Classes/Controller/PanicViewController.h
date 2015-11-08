@@ -10,4 +10,7 @@
 
 @interface PanicViewController : UIViewController
 
+- (BOOL)isEventInProgress;
+- (void)changeEventToInProgress:(BOOL)status;
+
 @end
