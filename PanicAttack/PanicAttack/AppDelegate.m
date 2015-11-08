@@ -149,6 +149,12 @@ typedef NS_ENUM (NSUInteger, PanicButtonState) {
     [event saveInBackground];
 }
 
+- (void)postUserUpdatedNotification {
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"UserUpdated" object:nil];
+    });
+}
+
 #pragma mark - Public
 
 - (void)eventProgressChangedInApp:(BOOL)inProgress {
@@ -222,9 +228,7 @@ typedef NS_ENUM (NSUInteger, PanicButtonState) {
                 NSDate *dateOfBirth = [self.healthStore dateOfBirthWithError:nil];
                 [UserProfile sharedInstance].user.birthDate = dateOfBirth;
                 [[UserProfile sharedInstance].user saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
-                    dispatch_async(dispatch_get_main_queue(), ^{
-                        [[NSNotificationCenter defaultCenter] postNotificationName:@"UserUpdated" object:nil];
-                    });
+                    [self postUserUpdatedNotification];
                 }];
                 
                 HKBiologicalSexObject *biologicalSexObject = [self.healthStore biologicalSexWithError:nil];
@@ -238,9 +242,7 @@ typedef NS_ENUM (NSUInteger, PanicButtonState) {
                     }
                     
                     [[UserProfile sharedInstance].user saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
-                        dispatch_async(dispatch_get_main_queue(), ^{
-                            [[NSNotificationCenter defaultCenter] postNotificationName:@"UserUpdated" object:nil];
-                        });
+                        [self postUserUpdatedNotification];
                     }];
                 }
             });
@@ -256,18 +258,14 @@ typedef NS_ENUM (NSUInteger, PanicButtonState) {
                     dispatch_async(dispatch_get_main_queue(), ^{
                         [UserProfile sharedInstance].user.weight = @(usersWeight);
                         [[UserProfile sharedInstance].user saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
-                            dispatch_async(dispatch_get_main_queue(), ^{
-                                [[NSNotificationCenter defaultCenter] postNotificationName:@"UserUpdated" object:nil];
-                            });
+                            [self postUserUpdatedNotification];
                         }];
                     });
                 } else {
                     dispatch_async(dispatch_get_main_queue(), ^{
                         [UserProfile sharedInstance].user.weight = nil;
                         [[UserProfile sharedInstance].user saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
-                            dispatch_async(dispatch_get_main_queue(), ^{
-                                [[NSNotificationCenter defaultCenter] postNotificationName:@"UserUpdated" object:nil];
-                            });
+                            [self postUserUpdatedNotification];
                         }];
                     });
                 }
