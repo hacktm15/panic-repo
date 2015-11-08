@@ -16,6 +16,7 @@ static NSString *kPanicButtonWait = @"Wait ...";
 
 static NSString *kPanicButtonKey = @"panicButtonKey";
 static NSString *kTimerKey = @"timerKey";
+static NSString *kGarWatchErrorTypeCommunicationKey = @"error";
 
 typedef NS_ENUM (NSUInteger, PanicButtonState) {
     EventNotInProgress = 0,
@@ -29,6 +30,7 @@ typedef NS_ENUM (NSUInteger, PanicButtonState) {
 @property (nonatomic) NSDictionary *panicButtonColors;
 @property (nonatomic) NSDictionary *panicButtonTitleColors;
 @property (nonatomic) NSNumber *panicButtonState;
+@property (nonatomic) WCSession* session;
 @property (unsafe_unretained, nonatomic) IBOutlet WKInterfaceButton *panicButton;
 @property (unsafe_unretained, nonatomic) IBOutlet WKInterfaceTimer *timer;
 @end
@@ -39,16 +41,18 @@ typedef NS_ENUM (NSUInteger, PanicButtonState) {
 - (void)awakeWithContext:(id)context {
     [super awakeWithContext:context];
 
-    self.panicButtonState = @(Waiting);
-    [self.timer setHidden: NO];
-
-    WCSession *session = [WCSession defaultSession];
-    session.delegate = self;
-    [session activateSession];
+    if ([WCSession isSupported]) {
+        [self checkAndEstablishSession];
+    }
 }
 
 - (void)willActivate {
     [super willActivate];
+
+    [self checkAndEstablishSession];
+
+    self.panicButtonState = @(Waiting);
+    [self.timer setHidden: YES];
 
     [self handlePanicButtonState];
 }
@@ -58,7 +62,16 @@ typedef NS_ENUM (NSUInteger, PanicButtonState) {
     [super didDeactivate];
 }
 
+- (void) checkAndEstablishSession {
+    if (!self.session) {
+        self.session = [WCSession defaultSession];
+        self.session.delegate = self;
+        [self.session activateSession];
+    }
+}
+
 - (void)session:(WCSession *)session didReceiveMessage:(NSDictionary<NSString *,id> *)message replyHandler:(void (^)(NSDictionary<NSString *,id> * _Nonnull))replyHandler {
+    [self.timer setDate: [message valueForKey: kTimerKey]];
     self.panicButtonState = [message valueForKey: kPanicButtonKey];
 }
 
@@ -68,7 +81,7 @@ typedef NS_ENUM (NSUInteger, PanicButtonState) {
 }
 
 - (void) displayCommunicationError {
-
+    [self pushControllerWithName: kGarWatchErrorTypeCommunicationKey context: nil];
 }
 
 - (void) handlePanicButtonState {

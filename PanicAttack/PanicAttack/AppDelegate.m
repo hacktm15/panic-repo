@@ -56,6 +56,7 @@ typedef NS_ENUM (NSUInteger, PanicButtonState) {
     UITabBarController *tabController = [UITabBarController new];
     tabController.title = @"Panic Attack";
     tabController.viewControllers = [self tabViewControllers];
+    tabController.selectedViewController = self.panicVC;
     
     UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController: tabController];
     
@@ -174,7 +175,7 @@ typedef NS_ENUM (NSUInteger, PanicButtonState) {
     if ([WCSession defaultSession].reachable) {
         [[WCSession defaultSession] sendMessage: @{
                                                    kPanicButtonKey : panicButtonState,
-                                                   kTimerKey : [NSDate date]
+                                                   kTimerKey : [self.panicVC getTimerStartDate],
                                                    }
                                    replyHandler:^(NSDictionary<NSString *,id> * _Nonnull replyMessage) {
 
@@ -189,15 +190,23 @@ typedef NS_ENUM (NSUInteger, PanicButtonState) {
     NSNumber *requestedState = [message valueForKey: kPanicButtonKey];
 
         dispatch_async(dispatch_get_main_queue(), ^{
+            NSDate *timerStartDate = [NSDate date];
 
             if (requestedState.unsignedIntegerValue != Waiting) {
                 [self.panicVC changeEventToInProgress: requestedState.unsignedIntegerValue];
             }
 
-            NSNumber *replyButtonState = [self.panicVC isEventInProgress] ? @(EventInProgress) : @(EventNotInProgress);
+            NSNumber *replyButtonState;
+
+            if ([self.panicVC isEventInProgress]) {
+                replyButtonState = @(EventInProgress);
+                timerStartDate = [self.panicVC getTimerStartDate];
+            } else {
+                replyButtonState = @(EventNotInProgress);
+            }
             replyHandler(@{
                            kPanicButtonKey : replyButtonState,
-                           kTimerKey : [NSDate date]
+                           kTimerKey : timerStartDate,
                            });
 
         });

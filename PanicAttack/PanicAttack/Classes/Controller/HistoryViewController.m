@@ -9,6 +9,7 @@
 #import "HistoryViewController.h"
 #import "DataHandler.h"
 #import "UserProfile.h"
+#import "PanicEventViewController.h"
 
 @interface HistoryViewController () <UITableViewDataSource, UITableViewDelegate>
 
@@ -51,6 +52,13 @@
     cell.textLabel.text = self.events[indexPath.row].startDate.description;
     
     return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    PanicEventViewController *panicEventVC = [[PanicEventViewController alloc] initWithEvent: self.events[indexPath.row]];
+    [self.navigationController pushViewController: panicEventVC animated: YES];
 }
 
 @end
