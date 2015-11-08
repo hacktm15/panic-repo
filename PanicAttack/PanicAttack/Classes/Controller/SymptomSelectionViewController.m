@@ -8,10 +8,10 @@
 
 #import "SymptomSelectionViewController.h"
 
-static NSString * const kSymptomsTitles[] = {@"racing or pounding heart", @"fear of dying", @"fear of losing control", @"fear of going crazy", @"difficulty breathing", @"other symptom", @"feeling light headed", @"chest pain or discomfort", @"tingling or numbness", @"hot flushes or cold chills", @"muscle tightness", @"other symptom", @"feeling of unreality", @"blurred vision", @"dizziness, faintness", @"shaking or trembling", @"nausea, stomach problems"};
-static const NSInteger kSymptomsCount = 23;
+static NSString * const kSymptomsTitles[] = {@"racing or pounding heart", @"fear of dying", @"fear of losing control", @"fear of going crazy", @"difficulty breathing", @"feeling light headed", @"chest pain or discomfort", @"tingling or numbness", @"hot flushes or cold chills", @"muscle tightness", @"feeling of unreality", @"blurred vision", @"dizziness, faintness", @"shaking or trembling", @"nausea, stomach problems"};
+static const NSInteger kSymptomsCount = 15;
 
-@interface SymptomSelectionViewController () <UITableViewDataSource>
+@interface SymptomSelectionViewController () <UITableViewDataSource, UITableViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
@@ -21,30 +21,19 @@ static const NSInteger kSymptomsCount = 23;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    UIBarButtonItem *doneButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(doneButtonPressed:)];
-    self.navigationItem.rightBarButtonItem = doneButtonItem;
-    
-    UIBarButtonItem *cancelButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(cancelButtonPressed:)];
-    self.navigationItem.leftBarButtonItem = cancelButtonItem;
 
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:NSStringFromClass([UITableViewCell class])];
 }
 
-#pragma mark - Actions
-
-- (void)doneButtonPressed:(id)sender {
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    
     NSMutableArray *selectedSymptoms = [NSMutableArray array];
     for (NSIndexPath *indexPath in self.tableView.indexPathsForSelectedRows) {
         [selectedSymptoms addObject:kSymptomsTitles[indexPath.row]];
     }
     
     [self.delegate symptomSelectionViewController:self didSelectSymptoms:selectedSymptoms];
-    [self.navigationController popViewControllerAnimated:YES];
-}
-
-- (void)cancelButtonPressed:(id)sender {
-    [self.navigationController popViewControllerAnimated:YES];
 }
 
 #pragma mark - UITableViewDataSource
@@ -55,9 +44,31 @@ static const NSInteger kSymptomsCount = 23;
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([UITableViewCell class])];
-    cell.textLabel.text = kSymptomsTitles[indexPath.row];
+    NSString *title = kSymptomsTitles[indexPath.row];
+    cell.textLabel.text = title;
+
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    [cell setAccessoryType:UITableViewCellAccessoryNone];
+    for (NSString *selectedSymptom in self.selectedSymptoms) {
+        if ([title isEqualToString:selectedSymptom]) {
+            [cell setAccessoryType:UITableViewCellAccessoryCheckmark];
+            [self.tableView selectRowAtIndexPath:indexPath animated:NO scrollPosition:UITableViewScrollPositionNone];
+        }
+    }
     
     return cell;
+}
+
+#pragma mark - UITableViewDelegate
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+    [cell setAccessoryType:UITableViewCellAccessoryCheckmark];
+}
+
+- (void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath {
+    UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+    [cell setAccessoryType:UITableViewCellAccessoryNone];
 }
 
 @end

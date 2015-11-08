@@ -13,6 +13,7 @@
 @interface SymptomSelectionViewController : UIViewController
 
 @property (weak, nonatomic) id<SymptomSelectionViewControllerDelegate> delegate;
+@property (nonatomic) NSArray *selectedSymptoms;
 
 @end
 
