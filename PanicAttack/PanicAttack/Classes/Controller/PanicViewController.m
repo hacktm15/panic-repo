@@ -40,13 +40,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.startStopButton.layer.borderWidth = 1.0;
-    self.startStopButton.layer.borderColor = [UIColor blueColor].CGColor;
-    
     self.timerLabel.text = @"";
     
     self.inProgress = NO;
-    [self.startStopButton setTitle: self.inProgress ? @"Stop" : @"Start" forState: UIControlStateNormal];
 }
 
 - (UITabBarItem *)tabBarItem {
@@ -59,7 +55,7 @@
     if (self.inProgress != inProgress) {
         _inProgress = inProgress;
         
-        [self.startStopButton setTitle: self.inProgress ? @"Stop" : @"Start" forState: UIControlStateNormal];
+        self.startStopButton.selected = inProgress;
         if (self.inProgress) {
             [self startPanicEvent];
         } else {
