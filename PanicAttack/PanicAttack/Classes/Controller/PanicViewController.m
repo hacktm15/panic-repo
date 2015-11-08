@@ -96,7 +96,7 @@
         dispatch_async(dispatch_get_main_queue(), ^{
             HKUnit *heartRateUnit = [HKUnit unitFromString: @"count/min"];
             double value = [quantity doubleValueForUnit: heartRateUnit];
-            self.heartRate.text = [NSString stringWithFormat:@"%f", value];
+            self.heartRate.text = [NSString stringWithFormat:@"%.0f", value];
         });
     }];
 }
