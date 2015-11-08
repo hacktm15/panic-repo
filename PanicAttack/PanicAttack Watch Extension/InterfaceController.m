@@ -215,9 +215,10 @@ typedef NS_ENUM (NSUInteger, PanicButtonState) {
     if (toState == HKWorkoutSessionStateRunning) {
         // This is the type you want updates on. It can be any health kit type, including heart rate.
         HKSampleType *sampleType = [HKObjectType quantityTypeForIdentifier:HKQuantityTypeIdentifierHeartRate];
-
+        NSDate *endDate = [NSDate date];
+        NSDate *startDate = [[NSCalendar currentCalendar] dateByAddingUnit:NSCalendarUnitSecond value: -30 toDate: endDate options: 0];
         // Match samples with a start date after the workout start
-        NSPredicate *predicate = [HKQuery predicateForSamplesWithStartDate: [NSDate date] endDate: nil  options: HKQueryOptionStrictStartDate];
+        NSPredicate *predicate = [HKQuery predicateForSamplesWithStartDate: startDate endDate: nil  options: HKQueryOptionStrictStartDate];
         HKQueryAnchor *anchor = [HKQueryAnchor anchorFromValue: HKAnchoredObjectQueryNoAnchor];
         HKAnchoredObjectQuery *query = [[HKAnchoredObjectQuery alloc] initWithType:sampleType predicate:predicate anchor: anchor limit: HKObjectQueryNoLimit resultsHandler:^(HKAnchoredObjectQuery * _Nonnull query, NSArray<__kindof HKSample *> * _Nullable sampleObjects, NSArray<HKDeletedObject *> * _Nullable deletedObjects, HKQueryAnchor * _Nullable newAnchor, NSError * _Nullable error) {
             if (error) {
