@@ -27,6 +27,7 @@
 
 - (void)fetchUserWithEmail:(NSString *)email completionBlock:(PFQueryArrayResultBlock)completion {
     PFQuery *query = [PFQuery queryWithClassName:[Patient parseClassName]];
+    [query whereKey:@"email" equalTo:email];
     [query findObjectsInBackgroundWithBlock:completion];
 }
 

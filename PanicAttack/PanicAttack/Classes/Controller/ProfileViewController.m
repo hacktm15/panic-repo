@@ -19,7 +19,9 @@ typedef NS_ENUM(NSInteger, PickerViewType) {
     PickerViewTypeWeight
 };
 
-@interface ProfileViewController () <UITextFieldDelegate, UIPickerViewDataSource, UIPickerViewDelegate>
+static NSString *const kUserProfileImageFile = @"userProfileImage.png";
+
+@interface ProfileViewController () <UITextFieldDelegate, UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 
 @property (strong, nonatomic) IBOutletCollection(UIView) NSArray *cells;
 
@@ -42,6 +44,10 @@ typedef NS_ENUM(NSInteger, PickerViewType) {
 @property (weak, nonatomic) IBOutlet UILabel *birthDateLabel;
 @property (weak, nonatomic) IBOutlet UILabel *weightLabel;
 
+@property (weak, nonatomic) IBOutlet UIImageView *imageView;
+
+@property (nonatomic) UIImagePickerController *imagePicker;
+
 @end
 
 @implementation ProfileViewController
@@ -53,6 +59,11 @@ typedef NS_ENUM(NSInteger, PickerViewType) {
     
 //    UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapGestureRecognized:)];
 //    [self.view addGestureRecognizer:tapGesture];
+    
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(imageViewTapped:)];
+    tap.numberOfTouchesRequired = 1;
+    tap.numberOfTapsRequired = 1;
+    [self.imageView addGestureRecognizer:tap];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -213,6 +224,8 @@ typedef NS_ENUM(NSInteger, PickerViewType) {
     dispatch_async(dispatch_get_main_queue(), ^{
     self.firstNameTextField.text = [UserProfile sharedInstance].user.firstName;
     self.lastNameTextField.text = [UserProfile sharedInstance].user.lastName;
+        
+    self.imageView.image = [self userProfileImage];
     
     if ([UserProfile sharedInstance].user.weight) {
         self.weightLabel.text = [NSString stringWithFormat:@"%ld Kg", [UserProfile sharedInstance].user.weight.integerValue];
@@ -248,6 +261,76 @@ typedef NS_ENUM(NSInteger, PickerViewType) {
 //    [UserProfile sharedInstance].user.birthDate = self.selectedBirthDate;
 //    
 //    [[UserProfile sharedInstance].user saveInBackground];
+}
+
+- (void)imageViewTapped:(UIGestureRecognizer *)recognizer{
+    BOOL cameraAvailable = [UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera];
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Select A Photo" message:nil preferredStyle:UIAlertControllerStyleActionSheet];
+    
+    UIAlertAction *galleryAction = [UIAlertAction actionWithTitle:@"Pick From Gallery" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        [self presentImagePickerForSourceType: UIImagePickerControllerSourceTypePhotoLibrary];
+    }];
+    
+    UIAlertAction *takePhotoAction;
+    if (cameraAvailable) {
+        takePhotoAction = [UIAlertAction actionWithTitle:@"Take Photo" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        [self presentImagePickerForSourceType: UIImagePickerControllerSourceTypeCamera];
+    }];
+    }
+    
+    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+        [alertController dismissViewControllerAnimated:YES completion:nil];
+    }];
+    
+    [alertController addAction:galleryAction];
+    if (cameraAvailable) {
+        [alertController addAction:takePhotoAction];
+    }
+    [alertController addAction:cancelAction];
+    
+    [self presentViewController:alertController animated:YES completion:nil];
+}
+
+- (void)presentImagePickerForSourceType:(UIImagePickerControllerSourceType)sourceType {
+    self.imagePicker = [UIImagePickerController new];
+    self.imagePicker.modalPresentationStyle = UIModalPresentationCurrentContext;
+    self.imagePicker.sourceType = sourceType;
+    self.imagePicker.delegate = self;
+    [self.imagePicker setAllowsEditing:YES];
+    
+    [self presentViewController:self.imagePicker animated:YES completion:nil];
+}
+
+- (void)saveUserSelectedImage:(UIImage *)image {
+    NSString* docsPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) firstObject];
+    NSData *imageData = UIImagePNGRepresentation(image);
+    NSString *path = [docsPath stringByAppendingPathComponent:kUserProfileImageFile];
+    if (path.length) {
+        [imageData writeToFile:path atomically:YES];
+    }
+}
+
+- (UIImage *)userProfileImage {
+    NSString* docsPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) firstObject];
+    NSString *path = [docsPath stringByAppendingPathComponent:kUserProfileImageFile];
+    UIImage *image = [UIImage imageWithData:[NSData dataWithContentsOfFile:path]];
+    return image;
+}
+
+#pragma mark - UIImagePickerControllerDelegate
+
+-(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info {
+    [self dismissViewControllerAnimated: YES completion: nil];
+    self.imagePicker = nil;
+    
+    UIImage *selectedImage = [info valueForKey: UIImagePickerControllerEditedImage];
+    self.imageView.image = selectedImage;
+    
+    [self saveUserSelectedImage: selectedImage];
+}
+
+- (void) imagePickerControllerDidCancel: (UIImagePickerController *) picker {
+    [self dismissViewControllerAnimated: YES completion: nil];
 }
 
 @end
