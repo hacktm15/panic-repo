@@ -14,6 +14,7 @@
 #import "Event.h"
 #import "HKHealthStore+AAPLExtensions.h"
 #import <HealthKit/HealthKit.h>
+#import "NSDate+Utils.h"
 
 @interface PanicViewController ()
 
@@ -109,8 +110,7 @@
 }
 
 - (void)navigateToEvent {
-#warning CONVERT DATE TO SYSTEM TIMEZONE
-    Event *newEvent = [[UserProfile sharedInstance].dataHandler createEventWithStartDate: self.startDate];
+    Event *newEvent = [[UserProfile sharedInstance].dataHandler createEventWithStartDate: [self.startDate toLocalTime]];
     PanicEventViewController *panicEventVC = [[PanicEventViewController alloc] initWithEvent: newEvent];
     [self.navigationController pushViewController: panicEventVC animated: YES];
     

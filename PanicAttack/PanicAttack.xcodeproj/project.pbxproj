@@ -68,6 +68,7 @@
 		A79B22F91BEE98D5007C1A86 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A79B22F71BEE98D5007C1A86 /* ProfileViewController.m */; };
 		A79B22FA1BEE98D5007C1A86 /* ProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A79B22F81BEE98D5007C1A86 /* ProfileViewController.xib */; };
 		A79B22FD1BEED49E007C1A86 /* HKHealthStore+AAPLExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = A79B22FC1BEED49E007C1A86 /* HKHealthStore+AAPLExtensions.m */; };
+		A7C518ED1BEF65CA0085A4B9 /* NSDate+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = A7C518EC1BEF65CA0085A4B9 /* NSDate+Utils.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -207,6 +208,8 @@
 		A79B22F81BEE98D5007C1A86 /* ProfileViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProfileViewController.xib; sourceTree = "<group>"; };
 		A79B22FB1BEED49E007C1A86 /* HKHealthStore+AAPLExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "HKHealthStore+AAPLExtensions.h"; sourceTree = "<group>"; };
 		A79B22FC1BEED49E007C1A86 /* HKHealthStore+AAPLExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "HKHealthStore+AAPLExtensions.m"; sourceTree = "<group>"; };
+		A7C518EB1BEF65CA0085A4B9 /* NSDate+Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Utils.h"; sourceTree = "<group>"; };
+		A7C518EC1BEF65CA0085A4B9 /* NSDate+Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Utils.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -251,6 +254,8 @@
 			children = (
 				2907A88C1BEF557000DC4162 /* HKHealthStore+AAPLExtensions.h */,
 				2907A88D1BEF557000DC4162 /* HKHealthStore+AAPLExtensions.m */,
+				A7C518EB1BEF65CA0085A4B9 /* NSDate+Utils.h */,
+				A7C518EC1BEF65CA0085A4B9 /* NSDate+Utils.m */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -627,6 +632,7 @@
 				A725AB1F1BEE5572009A8544 /* Event.m in Sources */,
 				A725AB1C1BEE5572009A8544 /* Patient.m in Sources */,
 				A725AB1B1BEE5572009A8544 /* User+CoreDataProperties.m in Sources */,
+				A7C518ED1BEF65CA0085A4B9 /* NSDate+Utils.m in Sources */,
 				A725AAD71BEE4E2C009A8544 /* CoreDataHandler.m in Sources */,
 				A79B22FD1BEED49E007C1A86 /* HKHealthStore+AAPLExtensions.m in Sources */,
 				A781F9F41BEF32D5001EC457 /* SymptomSelectionViewController.m in Sources */,

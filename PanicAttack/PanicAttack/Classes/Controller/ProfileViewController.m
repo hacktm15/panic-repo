@@ -8,6 +8,7 @@
 
 #import "ProfileViewController.h"
 #import "UserProfile.h"
+#import "NSDate+Utils.h"
 
 #define kMinWeight 30
 
@@ -41,8 +42,6 @@ typedef NS_ENUM(NSInteger, PickerViewType) {
 @property (weak, nonatomic) IBOutlet UILabel *birthDateLabel;
 @property (weak, nonatomic) IBOutlet UILabel *weightLabel;
 
-@property (nonatomic) NSDateFormatter *dateFormatter;
-
 @end
 
 @implementation ProfileViewController
@@ -74,16 +73,6 @@ typedef NS_ENUM(NSInteger, PickerViewType) {
 }
 
 #pragma mark - Accessors
-
-- (NSDateFormatter *)dateFormatter {
-    static NSDateFormatter *dateFormatter = nil;
-    if (!dateFormatter) {
-        dateFormatter = [[NSDateFormatter alloc] init];
-        [dateFormatter setDateFormat:@"dd / MM / yyyy"];
-    }
-    
-    return dateFormatter;
-}
 
 - (void)setPickerViewType:(PickerViewType)pickerViewType {
     if (_pickerViewType != pickerViewType) {
@@ -238,7 +227,7 @@ typedef NS_ENUM(NSInteger, PickerViewType) {
     }
     
     if ([UserProfile sharedInstance].user.birthDate) {
-        self.birthDateLabel.text = [self.dateFormatter stringFromDate:[UserProfile sharedInstance].user.birthDate];
+        self.birthDateLabel.text = [[UserProfile sharedInstance].user.birthDate toString];
         self.birthDateLabel.textColor = [UIColor darkTextColor];
     } else {
         self.birthDateLabel.text = @"Update in Health App";
