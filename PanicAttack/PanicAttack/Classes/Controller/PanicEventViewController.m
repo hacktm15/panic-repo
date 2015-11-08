@@ -170,7 +170,11 @@ static NSInteger const kScaleMeterIndexAndValueMappingOffset = 1;
                 }
                 case 2: //Symptoms
                     cell = [tableView dequeueReusableCellWithIdentifier:staticTableCellIdentifier forIndexPath:indexPath];
-                    ((StaticTableViewCell *)cell).label.text = @"No panic symptom selected";
+                    if (self.event.symptoms.count == 0) {
+                        ((StaticTableViewCell *)cell).label.text = @"No panic symptom selected";
+                    } else {
+                        ((StaticTableViewCell *)cell).label.text = [NSString stringWithFormat:@"%ld panic symptoms selected", self.event.symptoms.count];
+                    }
                     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
                     break;
                 case 3: //Fear
@@ -243,6 +247,8 @@ static NSInteger const kScaleMeterIndexAndValueMappingOffset = 1;
     
     self.event.symptoms = symptomsTemp;
     [self.event saveInBackground];
+    
+    [self.eventDetailsTable reloadData];
 }
 
 @end
