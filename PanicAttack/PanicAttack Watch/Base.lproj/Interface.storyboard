@@ -17,9 +17,15 @@
                                 <action selector="panicButtonAction" destination="AgC-eL-Hgc" id="qKz-ZT-mvc"/>
                             </connections>
                         </button>
-                        <timer alignment="center" verticalAlignment="bottom" enabled="YES" format="abbreviated" id="9Rc-jV-m4w"/>
+                        <group width="1" alignment="left" verticalAlignment="bottom" id="O5k-QE-c2n">
+                            <items>
+                                <timer alignment="left" verticalAlignment="bottom" enabled="YES" format="abbreviated" id="9Rc-jV-m4w"/>
+                                <label alignment="right" verticalAlignment="bottom" text="Label" id="CaP-o9-BHP"/>
+                            </items>
+                        </group>
                     </items>
                     <connections>
+                        <outlet property="heartRate" destination="CaP-o9-BHP" id="Jdo-5Y-urN"/>
                         <outlet property="panicButton" destination="mlj-pY-bBe" id="9J1-UZ-lLQ"/>
                         <outlet property="timer" destination="9Rc-jV-m4w" id="JeW-Z3-hx8"/>
                     </connections>

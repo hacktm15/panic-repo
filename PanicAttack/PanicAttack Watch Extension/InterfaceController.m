@@ -9,6 +9,7 @@
 #import "InterfaceController.h"
 #import <WatchConnectivity/WatchConnectivity.h>
 #import <UIKit/UIKit.h>
+#import <HealthKit/HealthKit.h>
 
 static NSString *kEventNotInProgressPanicButtonTitle = @"Start Monitoring";
 static NSString *kEventInProgressPanicButtonTitle = @"It's OK now";
@@ -24,15 +25,19 @@ typedef NS_ENUM (NSUInteger, PanicButtonState) {
     Waiting,
 };
 
-@interface InterfaceController() <WCSessionDelegate>
+@interface InterfaceController() <WCSessionDelegate, HKWorkoutSessionDelegate>
 
 @property (nonatomic) NSDictionary *panicButtonTitles;
 @property (nonatomic) NSDictionary *panicButtonColors;
 @property (nonatomic) NSDictionary *panicButtonTitleColors;
 @property (nonatomic) NSNumber *panicButtonState;
 @property (nonatomic) WCSession* session;
+@property (nonatomic) HKWorkoutSession *workoutSession;
+@property (nonatomic) HKHealthStore *healthStore;
+
 @property (unsafe_unretained, nonatomic) IBOutlet WKInterfaceButton *panicButton;
 @property (unsafe_unretained, nonatomic) IBOutlet WKInterfaceTimer *timer;
+@property (unsafe_unretained, nonatomic) IBOutlet WKInterfaceLabel *heartRate;
 @end
 
 @implementation InterfaceController
@@ -53,6 +58,7 @@ typedef NS_ENUM (NSUInteger, PanicButtonState) {
 
     self.panicButtonState = @(Waiting);
     [self.timer setHidden: YES];
+    [self.heartRate setHidden:YES];
 
     [self handlePanicButtonState];
 }
@@ -133,6 +139,7 @@ typedef NS_ENUM (NSUInteger, PanicButtonState) {
 - (void) startTimer {
     [self.timer start];
     [self.timer setHidden: NO];
+    [self startWorkout];
 }
 
 - (void) stopTimer {
@@ -176,4 +183,63 @@ typedef NS_ENUM (NSUInteger, PanicButtonState) {
     return _panicButtonTitleColors;
 }
 
+- (HKHealthStore *)healthStore {
+    if (!_healthStore) {
+        _healthStore = [HKHealthStore new];
+    }
+
+    return _healthStore;
+}
+
+- (void) startWorkout {
+    HKQuantityType *quantityType = [HKQuantityType quantityTypeForIdentifier: HKQuantityTypeIdentifierHeartRate];
+    NSSet *dataTypes = [NSSet setWithObject:quantityType];
+    [self.healthStore requestAuthorizationToShareTypes: nil readTypes:dataTypes completion:^(BOOL success, NSError * _Nullable error) {
+
+    }];
+    // Create a new workout session
+    self.workoutSession = [[HKWorkoutSession alloc] initWithActivityType:HKWorkoutActivityTypeOther locationType: HKWorkoutSessionLocationTypeIndoor];
+    self.workoutSession.delegate = self;
+
+    // Start the workout session
+    [self.healthStore startWorkoutSession: self.workoutSession];
+
+}
+
+#pragma mark HKWorkoutSessionDelegate
+-(void)workoutSession:(HKWorkoutSession *)workoutSession didFailWithError:(NSError *)error {
+
+}
+
+-(void)workoutSession:(HKWorkoutSession *)workoutSession didChangeToState:(HKWorkoutSessionState)toState fromState:(HKWorkoutSessionState)fromState date:(NSDate *)date {
+    if (toState == HKWorkoutSessionStateRunning) {
+        // This is the type you want updates on. It can be any health kit type, including heart rate.
+        HKSampleType *sampleType = [HKObjectType quantityTypeForIdentifier:HKQuantityTypeIdentifierHeartRate];
+
+        // Match samples with a start date after the workout start
+        NSPredicate *predicate = [HKQuery predicateForSamplesWithStartDate: [NSDate date] endDate: nil  options: HKQueryOptionNone];
+
+        HKAnchoredObjectQuery *query = [[HKAnchoredObjectQuery alloc] initWithType:sampleType predicate:predicate anchor: 0 limit: HKObjectQueryNoLimit resultsHandler:^(HKAnchoredObjectQuery * _Nonnull query, NSArray<__kindof HKSample *> * _Nullable sampleObjects, NSArray<HKDeletedObject *> * _Nullable deletedObjects, HKQueryAnchor * _Nullable newAnchor, NSError * _Nullable error) {
+            if (error) {
+                // Perform proper error handling here...
+//                NSLog(@"*** An error occured while performing the anchored object query. %@ ***", error.localizedDescription);
+            } else {
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    HKUnit *heartRateUnit = [HKUnit unitFromString: @"count/min"];
+                    HKQuantitySample *sample = [sampleObjects firstObject];
+                    double value = [sample.quantity doubleValueForUnit: heartRateUnit];
+                    if (value > 0.001) {
+                        [self.heartRate setHidden: NO];
+                        [self.heartRate setText: [NSString stringWithFormat:@"%f", value]];
+                    }
+                });
+            }
+
+
+
+        }];
+
+        [self.healthStore executeQuery: query];
+    }
+}
 @end
