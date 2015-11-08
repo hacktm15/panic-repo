@@ -29,24 +29,24 @@
 		888F87C11BEE3BEE00D7B673 /* GlanceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 888F87C01BEE3BEE00D7B673 /* GlanceController.m */; };
 		888F87C31BEE3BEE00D7B673 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 888F87C21BEE3BEE00D7B673 /* Assets.xcassets */; };
 		888F87C71BEE3BEE00D7B673 /* PanicAttack Watch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 888F87A81BEE3BEE00D7B673 /* PanicAttack Watch.app */; };
-		A725AAD71BEE4E2C009A8544 /* CoreDataHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = A725AAD61BEE4E2C009A8544 /* CoreDataHandler.m */; settings = {ASSET_TAGS = (); }; };
-		A725AADD1BEE51C3009A8544 /* UserProfile.m in Sources */ = {isa = PBXBuildFile; fileRef = A725AADC1BEE51C3009A8544 /* UserProfile.m */; settings = {ASSET_TAGS = (); }; };
-		A725AAE01BEE5250009A8544 /* DataHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = A725AADF1BEE5250009A8544 /* DataHandler.m */; settings = {ASSET_TAGS = (); }; };
-		A725AB1B1BEE5572009A8544 /* User+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = A725AB0B1BEE5572009A8544 /* User+CoreDataProperties.m */; settings = {ASSET_TAGS = (); }; };
-		A725AB1C1BEE5572009A8544 /* Patient.m in Sources */ = {isa = PBXBuildFile; fileRef = A725AB0D1BEE5572009A8544 /* Patient.m */; settings = {ASSET_TAGS = (); }; };
-		A725AB1D1BEE5572009A8544 /* Symptom+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = A725AB0F1BEE5572009A8544 /* Symptom+CoreDataProperties.m */; settings = {ASSET_TAGS = (); }; };
-		A725AB1E1BEE5572009A8544 /* Symptom.m in Sources */ = {isa = PBXBuildFile; fileRef = A725AB111BEE5572009A8544 /* Symptom.m */; settings = {ASSET_TAGS = (); }; };
-		A725AB1F1BEE5572009A8544 /* Event.m in Sources */ = {isa = PBXBuildFile; fileRef = A725AB151BEE5572009A8544 /* Event.m */; settings = {ASSET_TAGS = (); }; };
-		A725AB211BEE5572009A8544 /* Medication+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = A725AB181BEE5572009A8544 /* Medication+CoreDataProperties.m */; settings = {ASSET_TAGS = (); }; };
-		A725AB221BEE5572009A8544 /* Medication.m in Sources */ = {isa = PBXBuildFile; fileRef = A725AB1A1BEE5572009A8544 /* Medication.m */; settings = {ASSET_TAGS = (); }; };
-		A725AB251BEE6B46009A8544 /* Event+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = A725AB241BEE6B46009A8544 /* Event+CoreDataProperties.m */; settings = {ASSET_TAGS = (); }; };
-		A725AB2D1BEE6F79009A8544 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A725AB261BEE6F79009A8544 /* Bolts.framework */; settings = {ASSET_TAGS = (); }; };
-		A725AB2E1BEE6F79009A8544 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A725AB271BEE6F79009A8544 /* Parse.framework */; settings = {ASSET_TAGS = (); }; };
-		A725AB2F1BEE6F79009A8544 /* ParseCrashReporting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A725AB281BEE6F79009A8544 /* ParseCrashReporting.framework */; settings = {ASSET_TAGS = (); }; };
-		A725AB301BEE6F79009A8544 /* ParseFacebookUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A725AB291BEE6F79009A8544 /* ParseFacebookUtils.framework */; settings = {ASSET_TAGS = (); }; };
-		A725AB311BEE6F79009A8544 /* ParseFacebookUtilsV4.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A725AB2A1BEE6F79009A8544 /* ParseFacebookUtilsV4.framework */; settings = {ASSET_TAGS = (); }; };
-		A725AB321BEE6F79009A8544 /* ParseTwitterUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A725AB2B1BEE6F79009A8544 /* ParseTwitterUtils.framework */; settings = {ASSET_TAGS = (); }; };
-		A725AB331BEE6F79009A8544 /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A725AB2C1BEE6F79009A8544 /* ParseUI.framework */; settings = {ASSET_TAGS = (); }; };
+		A725AAD71BEE4E2C009A8544 /* CoreDataHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = A725AAD61BEE4E2C009A8544 /* CoreDataHandler.m */; };
+		A725AADD1BEE51C3009A8544 /* UserProfile.m in Sources */ = {isa = PBXBuildFile; fileRef = A725AADC1BEE51C3009A8544 /* UserProfile.m */; };
+		A725AAE01BEE5250009A8544 /* DataHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = A725AADF1BEE5250009A8544 /* DataHandler.m */; };
+		A725AB1B1BEE5572009A8544 /* User+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = A725AB0B1BEE5572009A8544 /* User+CoreDataProperties.m */; };
+		A725AB1C1BEE5572009A8544 /* Patient.m in Sources */ = {isa = PBXBuildFile; fileRef = A725AB0D1BEE5572009A8544 /* Patient.m */; };
+		A725AB1D1BEE5572009A8544 /* Symptom+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = A725AB0F1BEE5572009A8544 /* Symptom+CoreDataProperties.m */; };
+		A725AB1E1BEE5572009A8544 /* Symptom.m in Sources */ = {isa = PBXBuildFile; fileRef = A725AB111BEE5572009A8544 /* Symptom.m */; };
+		A725AB1F1BEE5572009A8544 /* Event.m in Sources */ = {isa = PBXBuildFile; fileRef = A725AB151BEE5572009A8544 /* Event.m */; };
+		A725AB211BEE5572009A8544 /* Medication+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = A725AB181BEE5572009A8544 /* Medication+CoreDataProperties.m */; };
+		A725AB221BEE5572009A8544 /* Medication.m in Sources */ = {isa = PBXBuildFile; fileRef = A725AB1A1BEE5572009A8544 /* Medication.m */; };
+		A725AB251BEE6B46009A8544 /* Event+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = A725AB241BEE6B46009A8544 /* Event+CoreDataProperties.m */; };
+		A725AB2D1BEE6F79009A8544 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A725AB261BEE6F79009A8544 /* Bolts.framework */; };
+		A725AB2E1BEE6F79009A8544 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A725AB271BEE6F79009A8544 /* Parse.framework */; };
+		A725AB2F1BEE6F79009A8544 /* ParseCrashReporting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A725AB281BEE6F79009A8544 /* ParseCrashReporting.framework */; };
+		A725AB301BEE6F79009A8544 /* ParseFacebookUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A725AB291BEE6F79009A8544 /* ParseFacebookUtils.framework */; };
+		A725AB311BEE6F79009A8544 /* ParseFacebookUtilsV4.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A725AB2A1BEE6F79009A8544 /* ParseFacebookUtilsV4.framework */; };
+		A725AB321BEE6F79009A8544 /* ParseTwitterUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A725AB2B1BEE6F79009A8544 /* ParseTwitterUtils.framework */; };
+		A725AB331BEE6F79009A8544 /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A725AB2C1BEE6F79009A8544 /* ParseUI.framework */; };
 		A725AB351BEE810E009A8544 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A725AB341BEE810E009A8544 /* AudioToolbox.framework */; };
 		A725AB371BEE811A009A8544 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A725AB361BEE811A009A8544 /* CFNetwork.framework */; };
 		A725AB391BEE8120009A8544 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A725AB381BEE8120009A8544 /* CoreGraphics.framework */; };
@@ -57,9 +57,11 @@
 		A725AB431BEE814A009A8544 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A725AB421BEE814A009A8544 /* SystemConfiguration.framework */; };
 		A725AB451BEE8159009A8544 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = A725AB441BEE8159009A8544 /* libz.tbd */; };
 		A725AB471BEE8160009A8544 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = A725AB461BEE8160009A8544 /* libsqlite3.tbd */; };
-		A79B22F91BEE98D5007C1A86 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A79B22F71BEE98D5007C1A86 /* ProfileViewController.m */; settings = {ASSET_TAGS = (); }; };
-		A79B22FA1BEE98D5007C1A86 /* ProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A79B22F81BEE98D5007C1A86 /* ProfileViewController.xib */; settings = {ASSET_TAGS = (); }; };
-		A79B22FD1BEED49E007C1A86 /* HKHealthStore+AAPLExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = A79B22FC1BEED49E007C1A86 /* HKHealthStore+AAPLExtensions.m */; settings = {ASSET_TAGS = (); }; };
+		A781F9F41BEF32D5001EC457 /* SymptomSelectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A781F9F21BEF32D5001EC457 /* SymptomSelectionViewController.m */; };
+		A781F9F51BEF32D5001EC457 /* SymptomSelectionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A781F9F31BEF32D5001EC457 /* SymptomSelectionViewController.xib */; };
+		A79B22F91BEE98D5007C1A86 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A79B22F71BEE98D5007C1A86 /* ProfileViewController.m */; };
+		A79B22FA1BEE98D5007C1A86 /* ProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A79B22F81BEE98D5007C1A86 /* ProfileViewController.xib */; };
+		A79B22FD1BEED49E007C1A86 /* HKHealthStore+AAPLExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = A79B22FC1BEED49E007C1A86 /* HKHealthStore+AAPLExtensions.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -177,6 +179,9 @@
 		A725AB421BEE814A009A8544 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		A725AB441BEE8159009A8544 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		A725AB461BEE8160009A8544 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		A781F9F11BEF32D5001EC457 /* SymptomSelectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SymptomSelectionViewController.h; sourceTree = "<group>"; };
+		A781F9F21BEF32D5001EC457 /* SymptomSelectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SymptomSelectionViewController.m; sourceTree = "<group>"; };
+		A781F9F31BEF32D5001EC457 /* SymptomSelectionViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SymptomSelectionViewController.xib; sourceTree = "<group>"; };
 		A79B22F61BEE98D5007C1A86 /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
 		A79B22F71BEE98D5007C1A86 /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
 		A79B22F81BEE98D5007C1A86 /* ProfileViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProfileViewController.xib; sourceTree = "<group>"; };
@@ -357,6 +362,9 @@
 				A79B22F61BEE98D5007C1A86 /* ProfileViewController.h */,
 				A79B22F71BEE98D5007C1A86 /* ProfileViewController.m */,
 				A79B22F81BEE98D5007C1A86 /* ProfileViewController.xib */,
+				A781F9F11BEF32D5001EC457 /* SymptomSelectionViewController.h */,
+				A781F9F21BEF32D5001EC457 /* SymptomSelectionViewController.m */,
+				A781F9F31BEF32D5001EC457 /* SymptomSelectionViewController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -542,6 +550,7 @@
 				888523791BEE5CFA003AE390 /* PanicViewController.xib in Resources */,
 				888E6F601BEE438500DBC93C /* File in Resources */,
 				8885237E1BEE5F82003AE390 /* HistoryViewController.xib in Resources */,
+				A781F9F51BEF32D5001EC457 /* SymptomSelectionViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -576,6 +585,7 @@
 				A725AB1B1BEE5572009A8544 /* User+CoreDataProperties.m in Sources */,
 				A725AAD71BEE4E2C009A8544 /* CoreDataHandler.m in Sources */,
 				A79B22FD1BEED49E007C1A86 /* HKHealthStore+AAPLExtensions.m in Sources */,
+				A781F9F41BEF32D5001EC457 /* SymptomSelectionViewController.m in Sources */,
 				888F87911BEE3AE700D7B673 /* AppDelegate.m in Sources */,
 				A725AB221BEE5572009A8544 /* Medication.m in Sources */,
 				888F878E1BEE3AE700D7B673 /* main.m in Sources */,
