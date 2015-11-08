@@ -230,7 +230,7 @@ typedef NS_ENUM (NSUInteger, PanicButtonState) {
     HKAnchoredObjectQuery *query = [[HKAnchoredObjectQuery alloc] initWithType:sampleType predicate:predicate anchor: anchor limit: HKObjectQueryNoLimit resultsHandler:^(HKAnchoredObjectQuery * _Nonnull query, NSArray<__kindof HKSample *> * _Nullable sampleObjects, NSArray<HKDeletedObject *> * _Nullable deletedObjects, HKQueryAnchor * _Nullable newAnchor, NSError * _Nullable error) {
         if (error) {
             // Perform proper error handling here...
-            //                NSLog(@"*** An error occured while performing the anchored object query. %@ ***", error.localizedDescription);
+            // NSLog(@"*** An error occured while performing the anchored object query. %@ ***", error.localizedDescription);
         } else {
             dispatch_async(dispatch_get_main_queue(), ^{
                 HKUnit *heartRateUnit = [HKUnit unitFromString: @"count/min"];
@@ -238,7 +238,7 @@ typedef NS_ENUM (NSUInteger, PanicButtonState) {
                 double value = [sample.quantity doubleValueForUnit: heartRateUnit];
                 if (value > 0.001) {
                     [self.heartRate setHidden: NO];
-                    NSString *heartRate = [NSString stringWithFormat:@"%.0fBPM", value];
+                    NSString *heartRate = [NSString stringWithFormat:@"%.0fbpm", value];
                     [self.heartRate setText: heartRate];
                     [[WCSession defaultSession] sendMessage: @{kHeartRateKey : [NSString stringWithFormat:@"%.0f", value]}
                                                replyHandler: ^(NSDictionary <NSString *, id> *_Nonnull replyMessage) {
@@ -251,9 +251,6 @@ typedef NS_ENUM (NSUInteger, PanicButtonState) {
                 [self getHeartRate];
             });
         }
-
-
-
     }];
 
     [self.healthStore executeQuery: query];
