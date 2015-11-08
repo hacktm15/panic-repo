@@ -217,9 +217,9 @@ typedef NS_ENUM (NSUInteger, PanicButtonState) {
         HKSampleType *sampleType = [HKObjectType quantityTypeForIdentifier:HKQuantityTypeIdentifierHeartRate];
 
         // Match samples with a start date after the workout start
-        NSPredicate *predicate = [HKQuery predicateForSamplesWithStartDate: [NSDate date] endDate: nil  options: HKQueryOptionNone];
-
-        HKAnchoredObjectQuery *query = [[HKAnchoredObjectQuery alloc] initWithType:sampleType predicate:predicate anchor: 0 limit: HKObjectQueryNoLimit resultsHandler:^(HKAnchoredObjectQuery * _Nonnull query, NSArray<__kindof HKSample *> * _Nullable sampleObjects, NSArray<HKDeletedObject *> * _Nullable deletedObjects, HKQueryAnchor * _Nullable newAnchor, NSError * _Nullable error) {
+        NSPredicate *predicate = [HKQuery predicateForSamplesWithStartDate: [NSDate date] endDate: nil  options: HKQueryOptionStrictStartDate];
+        HKQueryAnchor *anchor = [HKQueryAnchor anchorFromValue: HKAnchoredObjectQueryNoAnchor];
+        HKAnchoredObjectQuery *query = [[HKAnchoredObjectQuery alloc] initWithType:sampleType predicate:predicate anchor: anchor limit: HKObjectQueryNoLimit resultsHandler:^(HKAnchoredObjectQuery * _Nonnull query, NSArray<__kindof HKSample *> * _Nullable sampleObjects, NSArray<HKDeletedObject *> * _Nullable deletedObjects, HKQueryAnchor * _Nullable newAnchor, NSError * _Nullable error) {
             if (error) {
                 // Perform proper error handling here...
 //                NSLog(@"*** An error occured while performing the anchored object query. %@ ***", error.localizedDescription);
@@ -230,7 +230,7 @@ typedef NS_ENUM (NSUInteger, PanicButtonState) {
                     double value = [sample.quantity doubleValueForUnit: heartRateUnit];
                     if (value > 0.001) {
                         [self.heartRate setHidden: NO];
-                        [self.heartRate setText: [NSString stringWithFormat:@"%f", value]];
+                        [self.heartRate setText: [NSString stringWithFormat:@"%.0fBPM", value]];
                     }
                 });
             }
