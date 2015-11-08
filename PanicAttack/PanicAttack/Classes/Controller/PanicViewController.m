@@ -153,13 +153,12 @@
 }
 
 - (void) startObservingForHeartRateSamplesWithCompletionHandler:(void (^)(HKQuantity*))myCompletionHandler {
-    HKSampleType *_sampleType = [HKObjectType quantityTypeForIdentifier:HKQuantityTypeIdentifierHeartRate];
-
+    HKSampleType *sampleType = [HKObjectType quantityTypeForIdentifier:HKQuantityTypeIdentifierHeartRate];
     if (self.observeQuery != nil) {
         [self stopObservingForHeartRateSamples];
     }
 
-    self.observeQuery = [[HKObserverQuery alloc] initWithSampleType:_sampleType predicate:nil updateHandler:^(HKObserverQuery *query, HKObserverQueryCompletionHandler completionHandler, NSError *error) {
+    self.observeQuery = [[HKObserverQuery alloc] initWithSampleType: sampleType predicate:nil updateHandler:^(HKObserverQuery *query, HKObserverQueryCompletionHandler completionHandler, NSError *error) {
                         if (error) {
                             NSLog(@"%@ An error has occured with the following description: %@", self, error.localizedDescription);
                         } else{
