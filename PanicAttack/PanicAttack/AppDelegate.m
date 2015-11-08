@@ -18,6 +18,7 @@
 
 static NSString *kPanicButtonKey = @"panicButtonKey";
 static NSString *kTimerKey = @"timerKey";
+static NSString *kHeartRateKey = @"heartRateKey";
 
 typedef NS_ENUM (NSUInteger, PanicButtonState) {
     EventNotInProgress = 0,
@@ -196,24 +197,30 @@ typedef NS_ENUM (NSUInteger, PanicButtonState) {
     NSNumber *requestedState = [message valueForKey: kPanicButtonKey];
 
         dispatch_async(dispatch_get_main_queue(), ^{
-            NSDate *timerStartDate = [NSDate date];
-
-            if (requestedState.unsignedIntegerValue != Waiting) {
-                [self.panicVC changeEventToInProgress: requestedState.unsignedIntegerValue];
-            }
-
-            NSNumber *replyButtonState;
-
-            if ([self.panicVC isEventInProgress]) {
-                replyButtonState = @(EventInProgress);
-                timerStartDate = [self.panicVC getTimerStartDate];
+            NSString *heartRate = [message valueForKey: kHeartRateKey];
+            if (heartRate.length > 0) {
+                [self.panicVC updateHeartRate: heartRate];
             } else {
-                replyButtonState = @(EventNotInProgress);
+                NSDate *timerStartDate = [NSDate date];
+
+                if (requestedState.unsignedIntegerValue != Waiting) {
+                    [self.panicVC changeEventToInProgress: requestedState.unsignedIntegerValue];
+                }
+
+                NSNumber *replyButtonState;
+
+                if ([self.panicVC isEventInProgress]) {
+                    replyButtonState = @(EventInProgress);
+                    timerStartDate = [self.panicVC getTimerStartDate];
+                } else {
+                    replyButtonState = @(EventNotInProgress);
+                }
+                replyHandler(@{
+                               kPanicButtonKey : replyButtonState,
+                               kTimerKey : timerStartDate,
+                               });
             }
-            replyHandler(@{
-                           kPanicButtonKey : replyButtonState,
-                           kTimerKey : timerStartDate,
-                           });
+
 
         });
 }
