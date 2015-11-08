@@ -116,6 +116,9 @@
 
 - (void)navigateToEvent {
     Event *newEvent = [[UserProfile sharedInstance].dataHandler createEventWithStartDate: [self.startDate toLocalTime]];
+    newEvent.user = [UserProfile sharedInstance].user;
+    [newEvent saveInBackground];
+    
     PanicEventViewController *panicEventVC = [[PanicEventViewController alloc] initWithEvent: newEvent];
     [self.navigationController pushViewController: panicEventVC animated: YES];
     
