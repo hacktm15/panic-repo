@@ -213,34 +213,38 @@ typedef NS_ENUM (NSUInteger, PanicButtonState) {
 
 -(void)workoutSession:(HKWorkoutSession *)workoutSession didChangeToState:(HKWorkoutSessionState)toState fromState:(HKWorkoutSessionState)fromState date:(NSDate *)date {
     if (toState == HKWorkoutSessionStateRunning) {
-        // This is the type you want updates on. It can be any health kit type, including heart rate.
-        HKSampleType *sampleType = [HKObjectType quantityTypeForIdentifier:HKQuantityTypeIdentifierHeartRate];
-        NSDate *endDate = [NSDate date];
-        NSDate *startDate = [[NSCalendar currentCalendar] dateByAddingUnit:NSCalendarUnitSecond value: -30 toDate: endDate options: 0];
-        // Match samples with a start date after the workout start
-        NSPredicate *predicate = [HKQuery predicateForSamplesWithStartDate: startDate endDate: nil  options: HKQueryOptionStrictStartDate];
-        HKQueryAnchor *anchor = [HKQueryAnchor anchorFromValue: HKAnchoredObjectQueryNoAnchor];
-        HKAnchoredObjectQuery *query = [[HKAnchoredObjectQuery alloc] initWithType:sampleType predicate:predicate anchor: anchor limit: HKObjectQueryNoLimit resultsHandler:^(HKAnchoredObjectQuery * _Nonnull query, NSArray<__kindof HKSample *> * _Nullable sampleObjects, NSArray<HKDeletedObject *> * _Nullable deletedObjects, HKQueryAnchor * _Nullable newAnchor, NSError * _Nullable error) {
-            if (error) {
-                // Perform proper error handling here...
-//                NSLog(@"*** An error occured while performing the anchored object query. %@ ***", error.localizedDescription);
-            } else {
-                dispatch_async(dispatch_get_main_queue(), ^{
-                    HKUnit *heartRateUnit = [HKUnit unitFromString: @"count/min"];
-                    HKQuantitySample *sample = [sampleObjects firstObject];
-                    double value = [sample.quantity doubleValueForUnit: heartRateUnit];
-                    if (value > 0.001) {
-                        [self.heartRate setHidden: NO];
-                        [self.heartRate setText: [NSString stringWithFormat:@"%.0fBPM", value]];
-                    }
-                });
-            }
-
-
-
-        }];
-
-        [self.healthStore executeQuery: query];
+        [self getHeartRate];
     }
+}
+
+- (void) getHeartRate {
+    HKSampleType *sampleType = [HKObjectType quantityTypeForIdentifier:HKQuantityTypeIdentifierHeartRate];
+    NSDate *endDate = [NSDate date];
+    NSDate *startDate = [[NSCalendar currentCalendar] dateByAddingUnit:NSCalendarUnitSecond value: -10 toDate: endDate options: 0];
+    // Match samples with a start date after the workout start
+    NSPredicate *predicate = [HKQuery predicateForSamplesWithStartDate: startDate endDate: nil  options: HKQueryOptionStrictStartDate];
+    HKQueryAnchor *anchor = [HKQueryAnchor anchorFromValue: HKAnchoredObjectQueryNoAnchor];
+    HKAnchoredObjectQuery *query = [[HKAnchoredObjectQuery alloc] initWithType:sampleType predicate:predicate anchor: anchor limit: HKObjectQueryNoLimit resultsHandler:^(HKAnchoredObjectQuery * _Nonnull query, NSArray<__kindof HKSample *> * _Nullable sampleObjects, NSArray<HKDeletedObject *> * _Nullable deletedObjects, HKQueryAnchor * _Nullable newAnchor, NSError * _Nullable error) {
+        if (error) {
+            // Perform proper error handling here...
+            //                NSLog(@"*** An error occured while performing the anchored object query. %@ ***", error.localizedDescription);
+        } else {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                HKUnit *heartRateUnit = [HKUnit unitFromString: @"count/min"];
+                HKQuantitySample *sample = [sampleObjects firstObject];
+                double value = [sample.quantity doubleValueForUnit: heartRateUnit];
+                if (value > 0.001) {
+                    [self.heartRate setHidden: NO];
+                    [self.heartRate setText: [NSString stringWithFormat:@"%.0fBPM", value]];
+                }
+                [self getHeartRate];
+            });
+        }
+
+
+
+    }];
+
+    [self.healthStore executeQuery: query];
 }
 @end
