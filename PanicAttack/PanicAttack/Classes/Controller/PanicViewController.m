@@ -21,6 +21,8 @@
 @property (weak, nonatomic) IBOutlet UIButton *startStopButton;
 @property (weak, nonatomic) IBOutlet UILabel *timerLabel;
 @property (weak, nonatomic) IBOutlet UILabel *heartRate;
+@property (weak, nonatomic) IBOutlet UIImageView *heartRateImageVIew;
+@property (weak, nonatomic) IBOutlet UILabel *heartRateDescription;
 
 @property (nonatomic) HKObserverQuery *observeQuery;
 @property (nonatomic) HKHealthStore *healthStore;
@@ -43,6 +45,15 @@
     self.timerLabel.text = @"";
     
     self.inProgress = NO;
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    self.timerLabel.hidden = !self.inProgress;
+    self.heartRateDescription.hidden = !self.inProgress;
+    self.heartRate.hidden = !self.inProgress;
+    self.heartRateImageVIew.image = self.inProgress ? [UIImage imageNamed:@"heart"] : nil;
 }
 
 - (UITabBarItem *)tabBarItem {
@@ -73,7 +84,11 @@
 
 - (void) startPanicEvent {
     self.startDate = [NSDate date];
+    self.timerLabel.hidden = !self.inProgress;
     self.timerLabel.text = @"0";
+    self.heartRateDescription.hidden = !self.inProgress;
+    self.heartRate.hidden = !self.inProgress;
+    self.heartRateImageVIew.image = [UIImage imageNamed:@"heart"];
     
     [self starTimer];
 }
