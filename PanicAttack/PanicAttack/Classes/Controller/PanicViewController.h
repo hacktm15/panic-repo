@@ -12,5 +12,5 @@
 
 - (BOOL)isEventInProgress;
 - (void)changeEventToInProgress:(BOOL)status;
-
+- (NSDate *) getTimerStartDate;
 @end
