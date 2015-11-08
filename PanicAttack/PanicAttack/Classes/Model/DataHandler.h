@@ -7,14 +7,14 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "User.h"
+#import "Patient.h"
 #import "Event.h"
 #import "Medication.h"
 #import "Symptom.h"
 
 @interface DataHandler : NSObject
 
-- (User *)createUserWithEmail:(NSString *)email;
+- (Patient *)createUserWithEmail:(NSString *)email;
 - (void)fetchUserWithEmail:(NSString *)email completionBlock:(PFQueryArrayResultBlock)completion;
 
 - (Event *)createEventWithStartDate:(NSDate *)startDate;

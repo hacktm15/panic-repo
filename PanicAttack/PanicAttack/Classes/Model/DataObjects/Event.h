@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <Parse/Parse.h>
 
-@class Medication, Symptom, User;
+@class Medication, Symptom, Patient;
 
 NS_ASSUME_NONNULL_BEGIN
 

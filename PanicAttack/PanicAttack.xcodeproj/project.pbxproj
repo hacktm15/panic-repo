@@ -38,7 +38,7 @@
 		A725AADD1BEE51C3009A8544 /* UserProfile.m in Sources */ = {isa = PBXBuildFile; fileRef = A725AADC1BEE51C3009A8544 /* UserProfile.m */; };
 		A725AAE01BEE5250009A8544 /* DataHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = A725AADF1BEE5250009A8544 /* DataHandler.m */; };
 		A725AB1B1BEE5572009A8544 /* User+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = A725AB0B1BEE5572009A8544 /* User+CoreDataProperties.m */; };
-		A725AB1C1BEE5572009A8544 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = A725AB0D1BEE5572009A8544 /* User.m */; };
+		A725AB1C1BEE5572009A8544 /* Patient.m in Sources */ = {isa = PBXBuildFile; fileRef = A725AB0D1BEE5572009A8544 /* Patient.m */; };
 		A725AB1D1BEE5572009A8544 /* Symptom+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = A725AB0F1BEE5572009A8544 /* Symptom+CoreDataProperties.m */; };
 		A725AB1E1BEE5572009A8544 /* Symptom.m in Sources */ = {isa = PBXBuildFile; fileRef = A725AB111BEE5572009A8544 /* Symptom.m */; };
 		A725AB1F1BEE5572009A8544 /* Event.m in Sources */ = {isa = PBXBuildFile; fileRef = A725AB151BEE5572009A8544 /* Event.m */; };
@@ -62,6 +62,11 @@
 		A725AB431BEE814A009A8544 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A725AB421BEE814A009A8544 /* SystemConfiguration.framework */; };
 		A725AB451BEE8159009A8544 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = A725AB441BEE8159009A8544 /* libz.tbd */; };
 		A725AB471BEE8160009A8544 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = A725AB461BEE8160009A8544 /* libsqlite3.tbd */; };
+		A781F9F41BEF32D5001EC457 /* SymptomSelectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A781F9F21BEF32D5001EC457 /* SymptomSelectionViewController.m */; };
+		A781F9F51BEF32D5001EC457 /* SymptomSelectionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A781F9F31BEF32D5001EC457 /* SymptomSelectionViewController.xib */; };
+		A79B22F91BEE98D5007C1A86 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A79B22F71BEE98D5007C1A86 /* ProfileViewController.m */; };
+		A79B22FA1BEE98D5007C1A86 /* ProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A79B22F81BEE98D5007C1A86 /* ProfileViewController.xib */; };
+		A79B22FD1BEED49E007C1A86 /* HKHealthStore+AAPLExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = A79B22FC1BEED49E007C1A86 /* HKHealthStore+AAPLExtensions.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -160,8 +165,8 @@
 		A725AADF1BEE5250009A8544 /* DataHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataHandler.m; sourceTree = "<group>"; };
 		A725AB0B1BEE5572009A8544 /* User+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "User+CoreDataProperties.m"; sourceTree = "<group>"; };
 		A725AB0C1BEE5572009A8544 /* User+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "User+CoreDataProperties.h"; sourceTree = "<group>"; };
-		A725AB0D1BEE5572009A8544 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
-		A725AB0E1BEE5572009A8544 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		A725AB0D1BEE5572009A8544 /* Patient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Patient.m; sourceTree = "<group>"; };
+		A725AB0E1BEE5572009A8544 /* Patient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Patient.h; sourceTree = "<group>"; };
 		A725AB0F1BEE5572009A8544 /* Symptom+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Symptom+CoreDataProperties.m"; sourceTree = "<group>"; };
 		A725AB101BEE5572009A8544 /* Symptom+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Symptom+CoreDataProperties.h"; sourceTree = "<group>"; };
 		A725AB111BEE5572009A8544 /* Symptom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Symptom.m; sourceTree = "<group>"; };
@@ -191,6 +196,14 @@
 		A725AB421BEE814A009A8544 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		A725AB441BEE8159009A8544 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		A725AB461BEE8160009A8544 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		A781F9F11BEF32D5001EC457 /* SymptomSelectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SymptomSelectionViewController.h; sourceTree = "<group>"; };
+		A781F9F21BEF32D5001EC457 /* SymptomSelectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SymptomSelectionViewController.m; sourceTree = "<group>"; };
+		A781F9F31BEF32D5001EC457 /* SymptomSelectionViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SymptomSelectionViewController.xib; sourceTree = "<group>"; };
+		A79B22F61BEE98D5007C1A86 /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
+		A79B22F71BEE98D5007C1A86 /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
+		A79B22F81BEE98D5007C1A86 /* ProfileViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProfileViewController.xib; sourceTree = "<group>"; };
+		A79B22FB1BEED49E007C1A86 /* HKHealthStore+AAPLExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "HKHealthStore+AAPLExtensions.h"; sourceTree = "<group>"; };
+		A79B22FC1BEED49E007C1A86 /* HKHealthStore+AAPLExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "HKHealthStore+AAPLExtensions.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -369,6 +382,12 @@
 				885AF1461BEEECDC00E6884E /* TextInputViewController.h */,
 				885AF1471BEEECDC00E6884E /* TextInputViewController.m */,
 				885AF1481BEEECDC00E6884E /* TextInputViewController.xib */,
+				A79B22F61BEE98D5007C1A86 /* ProfileViewController.h */,
+				A79B22F71BEE98D5007C1A86 /* ProfileViewController.m */,
+				A79B22F81BEE98D5007C1A86 /* ProfileViewController.xib */,
+				A781F9F11BEF32D5001EC457 /* SymptomSelectionViewController.h */,
+				A781F9F21BEF32D5001EC457 /* SymptomSelectionViewController.m */,
+				A781F9F31BEF32D5001EC457 /* SymptomSelectionViewController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -376,6 +395,8 @@
 		888F87D51BEE3F8B00D7B673 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				A79B22FB1BEED49E007C1A86 /* HKHealthStore+AAPLExtensions.h */,
+				A79B22FC1BEED49E007C1A86 /* HKHealthStore+AAPLExtensions.m */,
 				A725AABC1BEE4D56009A8544 /* DataObjects */,
 				A725AAD51BEE4E2C009A8544 /* CoreDataHandler.h */,
 				A725AAD61BEE4E2C009A8544 /* CoreDataHandler.m */,
@@ -406,8 +427,8 @@
 			children = (
 				A725AB0B1BEE5572009A8544 /* User+CoreDataProperties.m */,
 				A725AB0C1BEE5572009A8544 /* User+CoreDataProperties.h */,
-				A725AB0D1BEE5572009A8544 /* User.m */,
-				A725AB0E1BEE5572009A8544 /* User.h */,
+				A725AB0D1BEE5572009A8544 /* Patient.m */,
+				A725AB0E1BEE5572009A8544 /* Patient.h */,
 				A725AB0F1BEE5572009A8544 /* Symptom+CoreDataProperties.m */,
 				A725AB101BEE5572009A8544 /* Symptom+CoreDataProperties.h */,
 				A725AB111BEE5572009A8544 /* Symptom.m */,
@@ -552,6 +573,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A79B22FA1BEE98D5007C1A86 /* ProfileViewController.xib in Resources */,
 				888F879F1BEE3AE700D7B673 /* LaunchScreen.storyboard in Resources */,
 				888523831BEE9F3E003AE390 /* PanicEventViewController.xib in Resources */,
 				885AF1401BEEDF6D00E6884E /* ScaleTableViewCell.xib in Resources */,
@@ -560,6 +582,7 @@
 				885AF14A1BEEECDC00E6884E /* TextInputViewController.xib in Resources */,
 				8885237E1BEE5F82003AE390 /* HistoryViewController.xib in Resources */,
 				888523881BEEC9BF003AE390 /* StaticTableViewCell.xib in Resources */,
+				A781F9F51BEF32D5001EC457 /* SymptomSelectionViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -588,9 +611,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				A725AB1F1BEE5572009A8544 /* Event.m in Sources */,
-				A725AB1C1BEE5572009A8544 /* User.m in Sources */,
+				A725AB1C1BEE5572009A8544 /* Patient.m in Sources */,
 				A725AB1B1BEE5572009A8544 /* User+CoreDataProperties.m in Sources */,
 				A725AAD71BEE4E2C009A8544 /* CoreDataHandler.m in Sources */,
+				A79B22FD1BEED49E007C1A86 /* HKHealthStore+AAPLExtensions.m in Sources */,
+				A781F9F41BEF32D5001EC457 /* SymptomSelectionViewController.m in Sources */,
 				888F87911BEE3AE700D7B673 /* AppDelegate.m in Sources */,
 				888523861BEEB0D3003AE390 /* StaticTableViewCell.m in Sources */,
 				A725AB221BEE5572009A8544 /* Medication.m in Sources */,
@@ -598,6 +623,7 @@
 				885AF1491BEEECDC00E6884E /* TextInputViewController.m in Sources */,
 				888523781BEE5CFA003AE390 /* PanicViewController.m in Sources */,
 				8885237D1BEE5F82003AE390 /* HistoryViewController.m in Sources */,
+				A79B22F91BEE98D5007C1A86 /* ProfileViewController.m in Sources */,
 				A725AB1D1BEE5572009A8544 /* Symptom+CoreDataProperties.m in Sources */,
 				A725AAE01BEE5250009A8544 /* DataHandler.m in Sources */,
 				A725AB1E1BEE5572009A8544 /* Symptom.m in Sources */,

@@ -8,11 +8,11 @@
 
 #import <Foundation/Foundation.h>
 #import "DataHandler.h"
-#import "User.h"
+#import "Patient.h"
 
 @interface UserProfile : NSObject
 
-@property (nonatomic) User *user;
+@property (nonatomic) Patient *user;
 
 @property (nonatomic) DataHandler *dataHandler;
 

@@ -13,7 +13,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface User : PFObject <PFSubclassing>
+@interface Patient : PFObject <PFSubclassing>
 
 // Insert code here to declare functionality of your managed object subclass
 

@@ -11,6 +11,7 @@
 
 #import "Event.h"
 
+
 NS_ASSUME_NONNULL_BEGIN
 
 @interface Event (CoreDataProperties)
@@ -24,7 +25,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nullable, nonatomic, retain) NSNumber *cause;
 @property (nullable, nonatomic, retain) NSString *observations;
 @property (nullable, nonatomic, retain) NSNumber *fearLevel;
-@property (nullable, nonatomic, retain) User *user;
+@property (nullable, nonatomic, retain) Patient *user;
 @property (nullable, nonatomic, retain) NSArray<Symptom *> *symptoms;
 @property (nullable, nonatomic, retain) NSArray<Medication *> *medications;
 

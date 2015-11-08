@@ -12,6 +12,7 @@
 #import "PanicEventViewController.h"
 #import "UserProfile.h"
 #import "Event.h"
+#import <HealthKit/HealthKit.h>
 
 @interface PanicViewController ()
 
@@ -119,10 +120,15 @@
     self.inProgress = status;
 }
 
+- (NSDate *) getTimerStartDate {
+    return self.startDate;
+}
+
 #pragma mark - Actions
 
 - (IBAction)startStopButtonPressed:(id)sender {
     self.inProgress = !self.inProgress;
 }
 
+#pragma mark - HeartBeat
 @end

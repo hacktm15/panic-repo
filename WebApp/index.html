@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <title>Panic Attack Tracker</title>
+    <link type="text/css" rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <!--<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>-->
+    <script src="js/parse-1.6.7.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.cabinet.js"></script>
+    <script src="js/panick.js"></script>
+    <script>
+        //start cabinet
+        $(function() {
+            $( "#tabs" ).tabs();
+        });
+        //end cabinet
+    </script>
+</head>
+<body onload="">
+<div class="listOfPeople">
+    <div class="container bootstrap snippet">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="main-box no-header clearfix">
+                    <div class="main-box-body clearfix">
+                        <div class="table-responsive">
+                            <form action="" class="search-form">
+                                <div class="form-group has-feedback">
+                                    <label for="search" class="sr-only">Search</label>
+                                    <input type="text" class="form-control" name="search" id="search" placeholder="search">
+                                    <span class="glyphicon glyphicon-search form-control-feedback"></span>
+                                </div>
+                            </form>
+                            <table class="table user-list" id="userTable">
+                                <thead>
+                                <tr>
+                                    <th>
+                                        <span>Patient Name</span></th>
+                                    </th>
+                                    <th><span>Last Time Attack</span></th>
+                                    <th class="text-center"><span>Birthday</span></th>
+                                    <th class="text-center"><span>Email</span></th>
+                                    <th class="text-center"><span>Details</span></th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>
+                                        <img src="img/user_3.jpg" alt="">
+                                        <button type="button" class="btn btn-link" data-toggle="modal" data-target="#myModal">
+                                            <span id="userName3">Full name 2</span>
+                                        </button>
+                                    </td>
+                                    <td>2013/08/12</td>
+                                    <td class="text-center">
+                                        <span class="text-center">29/09/2015</span>
+                                    </td>
+                                    <td class="text-center">
+                                        <a href="#" id="userEmail3">coco@yahoo.com</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <img src="img/user_3.jpg" alt="">
+                                        <a href="#" class="user-link" id="userName1">Full name 2</a>
+                                    </td>
+                                    <td>2013/08/12</td>
+                                    <td class="text-center">
+                                        <span class="text-center">29/09/2015</span>
+                                    </td>
+                                    <td class="text-center">
+                                        <a href="#" id="userEmail1">coco@yahoo.com</a>
+                                    </td>
+                                    <td class="text-center"><button id="toggle" class="btn btn-xs btn-info"> Details </button>
+                                    <div class="target" style="display: none;" id="details"> plm </div>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+            </div>
+            <div class="modal-body">
+                <div id="tabs">
+                    <ul>
+                        <li><a href="#tabs-1">Nunc tincidunt</a></li>
+                        <li><a href="#tabs-2">Proin dolor</a></li>
+                        <li><a href="#tabs-3">Aenean lacinia</a></li>
+                    </ul>
+                    <div id="tabs-1">
+                        <p>Proin elit arcu, rutrum commodo, vehicula tempus, commodo a, risus. Curabitur nec arcu. Donec sollicitudin mi sit amet mauris. Nam elementum quam ullamcorper ante. Etiam aliquet massa et lorem. Mauris dapibus lacus auctor risus. Aenean tempor ullamcorper leo. Vivamus sed magna quis ligula eleifend adipiscing. Duis orci. Aliquam sodales tortor vitae ipsum. Aliquam nulla. Duis aliquam molestie erat. Ut et mauris vel pede varius sollicitudin. Sed ut dolor nec orci tincidunt interdum. Phasellus ipsum. Nunc tristique tempus lectus.</p>
+                    </div>
+                    <div id="tabs-2">
+                        <p>Morbi tincidunt, dui sit amet facilisis feugiat, odio metus gravida ante, ut pharetra massa metus id nunc. Duis scelerisque molestie turpis. Sed fringilla, massa eget luctus malesuada, metus eros molestie lectus, ut tempus eros massa ut dolor. Aenean aliquet fringilla sem. Suspendisse sed ligula in ligula suscipit aliquam. Praesent in eros vestibulum mi adipiscing adipiscing. Morbi facilisis. Curabitur ornare consequat nunc. Aenean vel metus. Ut posuere viverra nulla. Aliquam erat volutpat. Pellentesque convallis. Maecenas feugiat, tellus pellentesque pretium posuere, felis lorem euismod felis, eu ornare leo nisi vel felis. Mauris consectetur tortor et purus.</p>
+                    </div>
+                    <div id="tabs-3">
+                        <p>Mauris eleifend est et turpis. Duis id erat. Suspendisse potenti. Aliquam vulputate, pede vel vehicula accumsan, mi neque rutrum erat, eu congue orci lorem eget lorem. Vestibulum non ante. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Fusce sodales. Quisque eu urna vel enim commodo pellentesque. Praesent eu risus hendrerit ligula tempus pretium. Curabitur lorem enim, pretium nec, feugiat nec, luctus a, lacus.</p>
+                        <p>Duis cursus. Maecenas ligula eros, blandit nec, pharetra at, semper at, magna. Nullam ac lacus. Nulla facilisi. Praesent viverra justo vitae neque. Praesent blandit adipiscing velit. Suspendisse potenti. Donec mattis, pede vel pharetra blandit, magna ligula faucibus eros, id euismod lacus dolor eget odio. Nam scelerisque. Donec non libero sed nulla mattis commodo. Ut sagittis. Donec nisi lectus, feugiat porttitor, tempor ac, tempor vitae, pede. Aenean vehicula velit eu tellus interdum rutrum. Maecenas commodo. Pellentesque nec elit. Fusce in lacus. Vivamus a libero vitae lectus hendrerit hendrerit.</p>
+                    </div>
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
