@@ -49,6 +49,10 @@
     [self.startStopButton setTitle: self.inProgress ? @"Stop" : @"Start" forState: UIControlStateNormal];
 }
 
+- (UITabBarItem *)tabBarItem {
+    return [[UITabBarItem alloc] initWithTitle:[self title] image:[UIImage imageNamed:@"Exclamation_Point_Emoticon"] tag:1];
+}
+
 #pragma mark - Private
 
 - (void)setInProgress:(BOOL)inProgress {

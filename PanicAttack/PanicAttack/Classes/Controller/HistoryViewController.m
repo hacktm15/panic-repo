@@ -36,6 +36,10 @@
     }];
 }
 
+- (UITabBarItem *)tabBarItem {
+    return [[UITabBarItem alloc] initWithTitle:[self title] image:[UIImage imageNamed:@"noun_25104_cc"] tag:2];
+}
+
 #pragma mark - Table
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {

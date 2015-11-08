@@ -72,6 +72,10 @@ typedef NS_ENUM(NSInteger, PickerViewType) {
     return @"Profile";
 }
 
+- (UITabBarItem *)tabBarItem {
+    return [[UITabBarItem alloc] initWithTitle:[self title] image:[UIImage imageNamed:@"noun_196972_cc"] tag:0];
+}
+
 #pragma mark - Accessors
 
 - (void)setPickerViewType:(PickerViewType)pickerViewType {

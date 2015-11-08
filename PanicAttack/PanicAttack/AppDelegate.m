@@ -57,6 +57,12 @@ typedef NS_ENUM (NSUInteger, PanicButtonState) {
     tabController.title = @"Panic Attack";
     tabController.viewControllers = [self tabViewControllers];
     tabController.selectedViewController = self.panicVC;
+//    NSArray *tabBarItems = @[
+//                             [[UITabBarItem alloc] initWithTitle:tabController.viewControllers[0].title image:nil tag:0],
+//                             [[UITabBarItem alloc] initWithTitle:tabController.viewControllers[1].title image:[UIImage imageNamed:@"Exclamation_Point_Emoticon"] tag:1],
+//                             [[UITabBarItem alloc] initWithTitle:tabController.viewControllers[2].title image:[UIImage imageNamed:@"Exclamation_Point_Emoticon"] tag:2]
+//                             ];
+//    tabController.tabBar.items = tabBarItems;
     
     UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController: tabController];
     
