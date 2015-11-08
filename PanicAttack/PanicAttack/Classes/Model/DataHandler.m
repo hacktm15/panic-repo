@@ -8,6 +8,7 @@
 
 #import "DataHandler.h"
 #import "CoreDataHandler.h"
+#import "UserProfile.h"
 
 @interface DataHandler ()
 
@@ -41,6 +42,7 @@
 
 - (void)fetchEventsWithCompletionBlock:(PFQueryArrayResultBlock)completion {
     PFQuery *query = [PFQuery queryWithClassName:[Event parseClassName]];
+    [query whereKey:@"user" equalTo:[UserProfile sharedInstance].user];
     [query orderByDescending:@"startDate"];
     [query includeKey:@"symptoms"];
     [query includeKey:@"medications"];
