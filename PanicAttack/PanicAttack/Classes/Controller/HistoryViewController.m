@@ -10,6 +10,7 @@
 #import "DataHandler.h"
 #import "UserProfile.h"
 #import "PanicEventViewController.h"
+#import "NSDate+Utils.h"
 
 @interface HistoryViewController () <UITableViewDataSource, UITableViewDelegate>
 
@@ -53,7 +54,13 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier: @"EventCellIdentifier" forIndexPath: indexPath];
     
-    cell.textLabel.text = self.events[indexPath.row].startDate.description;
+    static NSDateFormatter *dateFormatter = nil;
+    if (!dateFormatter) {
+        dateFormatter = [[NSDateFormatter alloc] init];
+        [dateFormatter setDateFormat:@"dd / MM / yyyy | HH:mm"];
+    }
+    
+    cell.textLabel.text = [dateFormatter stringFromDate:self.events[indexPath.row].startDate];
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     
     return cell;
