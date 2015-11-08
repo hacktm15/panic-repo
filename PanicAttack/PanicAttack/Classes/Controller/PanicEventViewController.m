@@ -11,6 +11,9 @@
 #import "ScaleTableViewCell.h"
 #import "TextInputViewController.h"
 #import "Event.h"
+#import "Symptom.h"
+#import "SymptomSelectionViewController.h"
+#import "UserProfile.h"
 
 static NSString *staticTableCellIdentifier = @"staticTableCellIdentifier";
 static NSString *scaleTableCellIdentifier = @"scaleTableCellIdentifier";
@@ -18,7 +21,7 @@ static NSString *scaleTableCellIdentifier = @"scaleTableCellIdentifier";
 static NSInteger const kScaleMeterIndexAndValueMappingOffset = 1;
 
 
-@interface PanicEventViewController () <UITableViewDataSource, UITableViewDelegate>
+@interface PanicEventViewController () <UITableViewDataSource, UITableViewDelegate, SymptomSelectionViewControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *eventDetailsTable;
 
@@ -207,9 +210,13 @@ static NSInteger const kScaleMeterIndexAndValueMappingOffset = 1;
     
     if (indexPath.section == 1) {
         switch (indexPath.row) {
-            case 2: //Symptoms
-                
+            case 2: { //Symptoms
+                SymptomSelectionViewController *symptomSelectionVC = [SymptomSelectionViewController new];
+                symptomSelectionVC.delegate = self;
+                symptomSelectionVC.selectedSymptoms = [self.event.symptoms valueForKey:@"name"];
+                [self.navigationController pushViewController:symptomSelectionVC animated:YES];
                 break;
+            }
             case 4: { //Observations
                 TextInputViewController *textInputVC = [[TextInputViewController alloc] initWithText: self.event.observations];
                 textInputVC.willDismiss = ^(NSString *text) {
@@ -223,6 +230,19 @@ static NSInteger const kScaleMeterIndexAndValueMappingOffset = 1;
                 break;
         }
     }
+}
+
+#pragma mark - SymptomSelectionViewControllerDelegate
+
+- (void)symptomSelectionViewController:(SymptomSelectionViewController *)symptomSelectionVC didSelectSymptoms:(NSArray *)symptoms {
+    NSMutableArray *symptomsTemp = [NSMutableArray new];
+    [symptoms enumerateObjectsUsingBlock:^(NSString*  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        Symptom* symptom = [[UserProfile sharedInstance].dataHandler createSymptomWithName: obj];
+        [symptomsTemp addObject:symptom];
+    }];
+    
+    self.event.symptoms = symptomsTemp;
+    [self.event saveInBackground];
 }
 
 @end

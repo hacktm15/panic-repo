@@ -87,11 +87,12 @@
 
 - (void) starTimer {
     self.timer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector: @selector(tick:) userInfo:nil repeats:YES];
+
     [self startObservingForHeartRateSamplesWithCompletionHandler:^(HKQuantity *quantity) {
         dispatch_async(dispatch_get_main_queue(), ^{
             HKUnit *heartRateUnit = [HKUnit unitFromString: @"count/min"];
             double value = [quantity doubleValueForUnit: heartRateUnit];
-            self.heartRate.text = [NSString stringWithFormat:@"%f", value];
+            self.heartRate.text = [NSString stringWithFormat:@"%.0f", value];
         });
     }];
 }
@@ -111,6 +112,9 @@
 
 - (void)navigateToEvent {
     Event *newEvent = [[UserProfile sharedInstance].dataHandler createEventWithStartDate: [self.startDate toLocalTime]];
+    newEvent.user = [UserProfile sharedInstance].user;
+    [newEvent saveInBackground];
+    
     PanicEventViewController *panicEventVC = [[PanicEventViewController alloc] initWithEvent: newEvent];
     [self.navigationController pushViewController: panicEventVC animated: YES];
     

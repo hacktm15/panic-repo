@@ -40,7 +40,7 @@ typedef NS_ENUM (NSUInteger, PanicButtonState) {
     
     self.healthStore = [HKHealthStore new];
     
-    [[UserProfile sharedInstance].dataHandler fetchUserWithEmail:@"user@email.com" completionBlock:^(NSArray<Patient *> * _Nullable objects, NSError * _Nullable error) {
+    [[UserProfile sharedInstance].dataHandler fetchUserWithEmail:@"user2@email.com" completionBlock:^(NSArray<Patient *> * _Nullable objects, NSError * _Nullable error) {
         if (objects.count == 0) {
             [self createDummyData];
         } else {
@@ -124,9 +124,9 @@ typedef NS_ENUM (NSUInteger, PanicButtonState) {
 }
 
 - (void)createDummyData {
-    Patient *user = [[UserProfile sharedInstance].dataHandler createUserWithEmail:@"user@email.com"];
-    user.firstName = @"Vlad";
-    user.lastName = @"Dracul";
+    Patient *user = [[UserProfile sharedInstance].dataHandler createUserWithEmail:@"user2@email.com"];
+    user.firstName = @"John";
+    user.lastName = @"Appleseed";
     user.sex = @0;
     user.birthDate = [NSDate dateWithTimeIntervalSince1970:0];
     user.weight = @89;

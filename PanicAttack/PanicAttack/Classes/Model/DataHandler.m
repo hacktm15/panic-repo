@@ -8,6 +8,7 @@
 
 #import "DataHandler.h"
 #import "CoreDataHandler.h"
+#import "UserProfile.h"
 
 @interface DataHandler ()
 
@@ -27,6 +28,7 @@
 
 - (void)fetchUserWithEmail:(NSString *)email completionBlock:(PFQueryArrayResultBlock)completion {
     PFQuery *query = [PFQuery queryWithClassName:[Patient parseClassName]];
+    [query whereKey:@"email" equalTo:email];
     [query findObjectsInBackgroundWithBlock:completion];
 }
 
@@ -40,6 +42,7 @@
 
 - (void)fetchEventsWithCompletionBlock:(PFQueryArrayResultBlock)completion {
     PFQuery *query = [PFQuery queryWithClassName:[Event parseClassName]];
+    [query whereKey:@"user" equalTo:[UserProfile sharedInstance].user];
     [query orderByDescending:@"startDate"];
     [query includeKey:@"symptoms"];
     [query includeKey:@"medications"];

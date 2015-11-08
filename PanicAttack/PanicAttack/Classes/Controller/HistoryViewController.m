@@ -54,6 +54,7 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier: @"EventCellIdentifier" forIndexPath: indexPath];
     
     cell.textLabel.text = self.events[indexPath.row].startDate.description;
+    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     
     return cell;
 }
