@@ -13,4 +13,5 @@
 - (BOOL)isEventInProgress;
 - (void)changeEventToInProgress:(BOOL)status;
 - (NSDate *) getTimerStartDate;
+- (void) updateHeartRate: (NSString *)heartRate;
 @end

@@ -17,6 +17,8 @@ static NSString *kPanicButtonWait = @"Wait ...";
 
 static NSString *kPanicButtonKey = @"panicButtonKey";
 static NSString *kTimerKey = @"timerKey";
+static NSString *kHeartRateKey = @"heartRateKey";
+
 static NSString *kGarWatchErrorTypeCommunicationKey = @"error";
 
 typedef NS_ENUM (NSUInteger, PanicButtonState) {
@@ -235,7 +237,15 @@ typedef NS_ENUM (NSUInteger, PanicButtonState) {
                 double value = [sample.quantity doubleValueForUnit: heartRateUnit];
                 if (value > 0.001) {
                     [self.heartRate setHidden: NO];
-                    [self.heartRate setText: [NSString stringWithFormat:@"%.0fBPM", value]];
+                    NSString *heartRate = [NSString stringWithFormat:@"%.0fBPM", value];
+                    [self.heartRate setText: heartRate];
+                    [[WCSession defaultSession] sendMessage: @{kHeartRateKey : [NSString stringWithFormat:@"%.0f", value]}
+                                               replyHandler: ^(NSDictionary <NSString *, id> *_Nonnull replyMessage) {
+                                               }
+                                               errorHandler: ^(NSError *_Nonnull error) {
+                                               }
+                     ];
+
                 }
                 [self getHeartRate];
             });

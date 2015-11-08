@@ -156,6 +156,10 @@
     return self.startDate;
 }
 
+- (void) updateHeartRate: (NSString *)heartRate {
+    self.heartRate.text = heartRate;
+}
+
 #pragma mark - Actions
 
 - (IBAction)startStopButtonPressed:(id)sender {
